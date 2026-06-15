@@ -11,6 +11,7 @@ name. Update centrally here, then `git pull` lands in every consuming repo with 
 - **Agents** (`explorer`, `planner`, `builder`, `reviewer`) — the orchestrator subagent set.
 - **Command** (`new-project`) — generic sub-project scaffolder.
 - **Hook** (`secret-scan`) — blocks Write/Edit/MultiEdit that contain real-looking credentials.
+- **Hook** (`session-start`) — injects a concise standing directive (orchestrate · prefer existing skills/agents · define-done-then-verify · gate changes · untrusted-content baseline) at every session start.
 - **PRINCIPLES.md** — orchestrator model, Karpathy's 4 coding principles, universal operating rules.
 - **settings.json** — a small permission allowlist to cut routine prompts.
 
