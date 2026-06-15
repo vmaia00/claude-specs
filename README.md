@@ -14,6 +14,7 @@ name. Update centrally here, then `git pull` lands in every consuming repo with 
 - **Hook** (`secret-scan`) — blocks Write/Edit/MultiEdit that contain real-looking credentials.
 - **Hook** (`session-start`) — injects a concise standing directive (orchestrate · prefer existing skills/agents · define-done-then-verify · gate changes · untrusted-content baseline) at every session start.
 - **PRINCIPLES.md** — orchestrator model, Karpathy's 4 coding principles, universal operating rules.
+- **ETHOS.md** — builder disposition: search-first + first principles, complete-within-scope, user sovereignty (adapted from gstack).
 - **settings.json** — a small permission allowlist to cut routine prompts.
 
 ## Install in a repo

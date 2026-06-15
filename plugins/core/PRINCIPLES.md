@@ -2,7 +2,7 @@
 
 Shared, domain-agnostic working rules, pulled into every repo via the `core` plugin. Each
 consuming repo's own `CLAUDE.md` / conventions add the domain specifics and **take precedence**
-where they conflict with anything here.
+where they conflict with anything here. See `ETHOS.md` for the *disposition* behind these rules.
 
 ---
 
@@ -38,9 +38,11 @@ repo's `.claude/agents/`.
 1. **Think before coding.** Don't assume; don't hide confusion; surface tradeoffs. State
    assumptions and ask when uncertain. Present interpretations rather than silently picking one.
    Advocate for the simpler approach when one exists.
-2. **Simplicity first.** Minimum code that solves the problem — nothing speculative. No features
-   beyond the request, no unnecessary abstractions, no error handling for impossible cases. If a
-   senior engineer would call it overcomplicated, trim it.
+2. **Simplicity first — narrow scope, deep finish.** Minimum code that solves the problem — nothing
+   speculative. No features beyond the request, no unnecessary abstractions, no error handling for
+   impossible cases. But "simple" governs *scope*, not *thoroughness*: within the scope you're given,
+   finish completely — edge cases, error paths, and tests — because completeness is cheap with AI.
+   Don't ship the 90% shortcut; flag genuinely unrelated work as separate scope. (See `ETHOS.md` §2.)
 3. **Surgical changes.** Touch only what you must. Don't refactor working code or "improve"
    surrounding code while you're there. Match the existing style. Mention (don't silently remove)
    unrelated dead code; remove only what *your* change orphaned.

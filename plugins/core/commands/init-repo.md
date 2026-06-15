@@ -34,7 +34,7 @@ Steps:
 
    ## How we work here
    - **Orchestrate.** Delegate research and edits to subagents; keep the main thread lean; expect
-     concise `file:line` conclusions, not raw file dumps. (See `core` PRINCIPLES.md for the full set.)
+     concise `file:line` conclusions, not raw file dumps. (See `core` ETHOS.md + PRINCIPLES.md.)
    - <add this repo's conventions, stack sharp edges, and domain rules here>
 
    ## Read order before working
