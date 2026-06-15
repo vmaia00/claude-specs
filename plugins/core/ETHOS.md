@@ -1,9 +1,7 @@
 # ETHOS.md — builder disposition (core)
 
 `PRINCIPLES.md` is the *operating rules*; this is the *disposition behind them* — how to think
-while building. Adapted, with credit, from Garry Tan's **gstack "Builder Ethos"**
-(github.com/garrytan/gstack) and reconciled with the karpathy coding principles. gstack's own
-ETHOS is his personal philosophy and is not copied here — these are our versions of the ideas.
+while building. 
 
 ---
 
@@ -44,9 +42,3 @@ never act**. Augment the user; don't replace them. Expertise makes a user more h
 ## 4. Build for yourself
 The best tools solve a real problem you actually have. The specificity of a concrete need beats the
 generality of a hypothetical one every time.
-
----
-
-*Credit: pillars adapt ideas from Garry Tan's gstack ETHOS. Pillar 2 ("complete within scope")
-deliberately reconciles gstack's "Boil the Ocean" with the karpathy "Simplicity First / Surgical
-Changes" already in `PRINCIPLES.md`.*
