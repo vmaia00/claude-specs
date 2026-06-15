@@ -13,6 +13,13 @@
       "description": "Orchestrator foundations: generic builder/explorer/planner/reviewer agents, a new-project command, a secret-scan hook, and universal working principles.",
       "category": "workflow",
       "tags": ["orchestrator", "agents", "conventions", "secrets"]
+    },
+    {
+      "name": "ecc",
+      "source": "./plugins/ecc",
+      "description": "Vendored full copy of affaan-m/ECC v2.0.0 — 64 agents, 262 skills, 84 commands (MIT). Opt-in; mostly language/framework-specific.",
+      "category": "vendored",
+      "tags": ["ecc", "agents", "skills", "commands", "vendored"]
     }
   ]
 }
