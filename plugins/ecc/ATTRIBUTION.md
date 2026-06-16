@@ -19,6 +19,11 @@ Only the component catalogs were vendored:
 ECC's `hooks/`, `rules/`, `mcp-configs/`, `contexts/`, `scripts/`, `src/`, installers, and other
 infrastructure were intentionally left out — this plugin is the agents/skills/commands catalog only.
 
+## Local modifications
+This copy is **not byte-for-byte verbatim**: the `model:` frontmatter field of the 56 agents that
+upstream set to `sonnet` was changed to `inherit` (so they follow the session model). The 7 `opus`
+and 1 `haiku` agents are unchanged. No other content was modified.
+
 ## Maintenance note
 This is a **frozen snapshot**, not a live mirror. To refresh, re-clone the upstream repo at a newer
 commit and re-copy the three folders, then bump `version` in `.claude-plugin/plugin.json`. Upstream
