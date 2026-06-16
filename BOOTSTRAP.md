@@ -21,6 +21,12 @@ For CI, other harnesses, or air-gapped use, copy `plugins/core/` contents into t
 `.claude/` (agents → `.claude/agents/`, etc.) and the `PRINCIPLES.md` into the repo. No live link;
 re-copy to update.
 
+## Companion tools (optional, install separately)
+- **claude-mem** — persistent memory across sessions: `npx claude-mem install`.
+- **graphify** — code→knowledge-graph for large codebases (Python/Tree-sitter deps).
+
+Both are their own installs, not part of `core`. See the README "Companion tools" section.
+
 ## The core idea
 The **main thread orchestrates**; it delegates research and development to subagents so its own
 context stays lean. Subagents return conclusions and diffs with `file:line` citations, not raw

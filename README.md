@@ -13,6 +13,7 @@ name. Update centrally here, then `git pull` lands in every consuming repo with 
 - **Command** (`init-repo`) — seeds a minimal starter `CLAUDE.md` (+ `AGENTS.md` pointer) for a new repo's local layer.
 - **Hook** (`secret-scan`) — blocks Write/Edit/MultiEdit that contain real-looking credentials.
 - **Hook** (`session-start`) — injects a concise standing directive (orchestrate · prefer existing skills/agents · define-done-then-verify · gate changes · untrusted-content baseline) at every session start.
+- **Skills** (`diagnose`, `write-a-skill`, `handoff`, `zoom-out`, `caveman`) — curated engineering/productivity skills vendored from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT; see `plugins/core/THIRD-PARTY-NOTICES.md`).
 - **PRINCIPLES.md** — orchestrator model, Karpathy's 4 coding principles, universal operating rules.
 - **ETHOS.md** — builder disposition: search-first + first principles, complete-within-scope, user sovereignty (adapted from gstack).
 - **settings.json** — a small permission allowlist to cut routine prompts.
@@ -45,6 +46,18 @@ Point Claude Code at this folder directly instead of GitHub:
 | **Local** (per repo) | each repo's `.claude/` | domain agents/hooks that override the shared ones |
 
 See `BOOTSTRAP.md` to stand up a brand-new repo on these foundations.
+
+## Companion tools (install separately, not vendored)
+
+Heavier, dependency-bearing tools that are better consumed as their own installs than vendored into
+`core`:
+
+- **[claude-mem](https://github.com/thedotmack/claude-mem)** — persistent memory across sessions
+  (captures + compresses session activity, re-injects relevant context). Install: `npx claude-mem install`.
+- **[graphify](https://github.com/safishamsi/graphify)** — turn a codebase into a queryable
+  knowledge graph (Tree-sitter + NetworkX; Python deps). Sends only semantic content, not raw source.
+
+See `research/insights.md` for a backlog of further patterns under evaluation.
 
 ## Releasing & version pinning
 
