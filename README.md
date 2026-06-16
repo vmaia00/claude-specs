@@ -13,7 +13,7 @@ name. Update centrally here, then `git pull` lands in every consuming repo with 
 - **Command** (`init-repo`) — seeds a minimal starter `CLAUDE.md` (+ `AGENTS.md` pointer) for a new repo's local layer.
 - **Hook** (`secret-scan`) — blocks Write/Edit/MultiEdit that contain real-looking credentials.
 - **Hook** (`session-start`) — injects a concise standing directive (orchestrate · prefer existing skills/agents · define-done-then-verify · gate changes · untrusted-content baseline) at every session start.
-- **Skills** (`diagnose`, `write-a-skill`, `handoff`, `zoom-out`, `caveman`) — curated engineering/productivity skills vendored from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT; see `plugins/core/THIRD-PARTY-NOTICES.md`).
+- **Skills** (`diagnose`, `write-a-skill`, `handoff`, `zoom-out`, `caveman`) — curated engineering/productivity skills vendored from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT; see `plugins/core/docs/THIRD-PARTY-NOTICES.md`).
 - **PRINCIPLES.md** — orchestrator model, Karpathy's 4 coding principles, universal operating rules.
 - **ETHOS.md** — builder disposition: search-first + first principles, complete-within-scope, user sovereignty (adapted from gstack).
 - **settings.json** — a small permission allowlist to cut routine prompts.

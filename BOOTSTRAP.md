@@ -30,4 +30,4 @@ Both are their own installs, not part of `core`. See the README "Companion tools
 ## The core idea
 The **main thread orchestrates**; it delegates research and development to subagents so its own
 context stays lean. Subagents return conclusions and diffs with `file:line` citations, not raw
-file dumps. This keeps long sessions cheap and focused. See `plugins/core/PRINCIPLES.md`.
+file dumps. This keeps long sessions cheap and focused. See `plugins/core/docs/PRINCIPLES.md`.
