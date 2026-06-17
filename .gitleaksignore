@@ -1,0 +1,19 @@
+# .gitleaksignore — fingerprints for VERIFIED FALSE POSITIVES only (documentation
+# examples, not real secrets). The global pre-push hook runs `gitleaks detect --no-git`,
+# which reads this file. The generic-api-key rule stays active for everything else.
+
+# Pre-existing in the vendored `ecc` plugin — an example API-key auth header in the
+# REST API-design docs (a placeholder bearer value, not a real key).
+plugins/ecc/skills/api-design/SKILL.md:generic-api-key:306
+
+# Vendored `ruby` plugin: values copied verbatim from the official Rails Guides via the
+# `rails-guides` skill — a sample authenticity_token in a params dump, and example
+# secret_key_base / key_derivation_salt / deterministic_key from the credentials and
+# Active Record Encryption walkthroughs. All documentation placeholders.
+plugins/ruby/skills/rails-guides/references/debugging_rails_applications.md:generic-api-key:183
+plugins/ruby/skills/rails-guides/references/command_line.md:generic-api-key:1404
+plugins/ruby/skills/rails-guides/references/command_line.md:generic-api-key:1405
+plugins/ruby/skills/rails-guides/references/command_line.md:generic-api-key:1408
+plugins/ruby/skills/rails-guides/references/active_record_encryption.md:generic-api-key:55
+plugins/ruby/skills/rails-guides/references/active_record_encryption.md:generic-api-key:56
+plugins/ruby/skills/rails-guides/references/active_record_encryption.md:generic-api-key:817
