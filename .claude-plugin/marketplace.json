@@ -27,6 +27,13 @@
       "description": "Curated Ruby/Rails/Hotwire/TDD agent skills (28), vendored (MIT) from superpowers-ruby + rails-agent-skills + ruby-core-skills. Opt-in; install for Ruby on Rails work.",
       "category": "language",
       "tags": ["ruby", "rails", "hotwire", "tdd", "skills", "vendored"]
+    },
+    {
+      "name": "review-council",
+      "source": "./plugins/review-council",
+      "description": "Always-on multi-persona code-review pipeline: parallel distinct-angle reviewer panels → a Code Review Master → a second adversarial panel → Master 2 → an opt-in Executor & Fixer. No token optimization; every panelist is always spun up. Opt-in.",
+      "category": "workflow",
+      "tags": ["review", "code-review", "multi-agent", "personas", "orchestrator"]
     }
   ]
 }
