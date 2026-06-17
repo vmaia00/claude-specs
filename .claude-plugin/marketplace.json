@@ -24,7 +24,7 @@
     {
       "name": "ruby",
       "source": "./plugins/ruby",
-      "description": "Curated Ruby/Rails/Hotwire/TDD agent skills (28), vendored (MIT) from superpowers-ruby + rails-agent-skills + ruby-core-skills. Opt-in; install for Ruby on Rails work.",
+      "description": "Curated Ruby/Rails/Hotwire/TDD agent skills (28) + a code-reviewer agent, vendored (MIT) from superpowers-ruby + rails-agent-skills + ruby-core-skills. Opt-in; install for Ruby on Rails work.",
       "category": "language",
       "tags": ["ruby", "rails", "hotwire", "tdd", "skills", "vendored"]
     }

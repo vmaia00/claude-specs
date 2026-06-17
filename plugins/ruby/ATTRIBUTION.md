@@ -45,6 +45,11 @@ carries an `origin:` frontmatter field naming its source.
 | `ruby-api-client` | `integrate-api-client` |
 | `ruby-yard-docs` | `write-yard-docs` |
 
+### Agent (1)
+
+`agents/code-reviewer.md` — from superpowers-ruby (`712d734`), a senior code-reviewer agent
+(plan-alignment + quality/security review). `model:` is `inherit`; an `origin:` field was added.
+
 ## Local modifications
 
 - **Flattened** the upstream category nesting (`skills/<category>/<name>/`) into the flat
@@ -70,10 +75,18 @@ To keep the plugin focused and avoid duplicating the `core` plugin, the followin
   `orchestration/skill-router`, `code-quality/respond-to-review`,
   `patterns/implement-calculator-pattern`, `testing/triage-bug`.
 
-## Possible follow-up (not in v1)
+## Commands — intentionally NOT vendored
 
-superpowers-ruby's `code-reviewer` agent and `brainstorm`/`write-plan`/`execute-plan` commands, and
-rails-agent-skills' `personas/`, could be added under `agents/` / `commands/` if wanted.
+superpowers-ruby's `brainstorm`, `write-plan` and `execute-plan` commands are **deprecated stubs**
+upstream — each is a one-line notice telling the user to use the `brainstorming` / `writing-plans` /
+`executing-plans` skills instead. Those skills are not part of this curated set, so the commands
+would dangle. If the brainstorm → plan → execute workflow is wanted, vendor those three **skills**
+(and their helpers) rather than the deprecated commands.
+
+## Possible follow-up (not yet vendored)
+
+rails-agent-skills' 9 `personas/` and superpowers-ruby's workflow skills
+(`brainstorming`, `writing-plans`, `executing-plans`) could be added if wanted.
 
 ## Maintenance note
 
