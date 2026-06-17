@@ -20,6 +20,13 @@
       "description": "Vendored full copy of affaan-m/ECC v2.0.0 — 64 agents, 262 skills, 84 commands (MIT). Opt-in; mostly language/framework-specific.",
       "category": "vendored",
       "tags": ["ecc", "agents", "skills", "commands", "vendored"]
+    },
+    {
+      "name": "ruby",
+      "source": "./plugins/ruby",
+      "description": "Curated Ruby/Rails/Hotwire/TDD agent skills (28), vendored (MIT) from superpowers-ruby + rails-agent-skills + ruby-core-skills. Opt-in; install for Ruby on Rails work.",
+      "category": "language",
+      "tags": ["ruby", "rails", "hotwire", "tdd", "skills", "vendored"]
     }
   ]
 }
