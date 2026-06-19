@@ -1,0 +1,88 @@
+name: security
+
+# Server-side backstop for the local pre-push gitleaks hook. Runs on every PR and on pushes to
+# main so coverage no longer depends on a contributor having gitleaks installed locally.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: security-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gitleaks:
+    name: gitleaks (secret scan)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history so gitleaks can scan all commits in the PR/branch
+      - name: Run gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # gitleaks-action is free for personal accounts and public repos (no GITLEAKS_LICENSE
+          # needed). Only org-owned repos require a license key.
+
+  semgrep:
+    name: semgrep (SAST, advisory)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write # to upload SARIF to the Security > Code scanning tab
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install semgrep
+        run: pipx install semgrep
+      - name: Scan
+        # Advisory for now: `|| true` keeps it from failing the build on legacy findings.
+        # Findings still surface in the Code scanning tab. To make it gate: drop `|| true` and
+        # add `--error`, after triaging the initial baseline.
+        run: |
+          semgrep scan \
+            --config p/default \
+            --config p/javascript \
+            --config p/python \
+            --config p/bash \
+            --sarif --output semgrep.sarif || true
+      - name: Upload SARIF
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: semgrep.sarif
+
+  shellcheck:
+    name: shellcheck (shell lint)
+    runs-on: ubuntu-latest # shellcheck is preinstalled on GitHub-hosted ubuntu runners
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint shell scripts
+        # Gate on error-severity only; warnings/style/info are reported but do not fail the build.
+        run: |
+          mapfile -d '' files < <(find . -type f -name '*.sh' -not -path './.git/*' -print0)
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No shell scripts found."
+            exit 0
+          fi
+          printf 'Checking:\n'; printf '  %s\n' "${files[@]}"
+          shellcheck --severity=error "${files[@]}"
+
+  trufflehog:
+    name: trufflehog (verified secrets)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history so TruffleHog can determine the scan range
+      - name: Scan for verified secrets
+        # --only-verified: TruffleHog actively checks whether each candidate is a *live*
+        # credential, so this gates on real leaks with far fewer false positives than a
+        # pattern-only scanner. Complements gitleaks (pattern-based, catches more shapes).
+        uses: trufflesecurity/trufflehog@v3.95.6
+        with:
+          extra_args: --only-verified

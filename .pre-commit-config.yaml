@@ -1,0 +1,50 @@
+# Portable pre-commit hooks — the same checks CI runs, on every `git commit`, for any
+# contributor regardless of editor. Complements (does not replace) the local Claude Code
+# pre-push gitleaks hook in ~/.claude/settings.json.
+#
+# One-time setup:
+#   pipx install pre-commit   # or: brew install pre-commit
+#   pre-commit install        # installs the git hook
+# Run against everything once:
+#   pre-commit run --all-files
+# Refresh hook versions:
+#   pre-commit autoupdate
+minimum_pre_commit_version: "3.5.0"
+
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.21.2
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.10.0
+    hooks:
+      - id: shellcheck
+        args: ["--severity=error"]
+
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.22.1
+    hooks:
+      - id: markdownlint-cli2
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-json
+      - id: check-yaml
+        args: ["--allow-multiple-documents"]
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        exclude: '\.md$' # MD trailing spaces can be meaningful (hard line breaks)
+
+  # Mirror the CI manifest/frontmatter gate locally.
+  - repo: local
+    hooks:
+      - id: validate-plugins
+        name: validate plugin manifests + frontmatter
+        entry: node scripts/validate-plugins.mjs
+        language: system
+        pass_filenames: false
+        files: '(\.claude-plugin/.*\.json|/(agents|skills)/.*\.md)$'

@@ -1,0 +1,9 @@
+name: "CodeQL config — first-party only"
+
+# Vendored third-party plugins (ecc, ruby) are out of scope — they're MIT-vendored copies we
+# don't maintain line-by-line, and scanning them only produces noise we can't act on. This
+# mirrors scripts/validate-plugins.mjs treating vendored plugins leniently. CodeQL therefore
+# analyzes the hook/script code we actually own (plugins/core, plugins/review-council, scripts).
+paths-ignore:
+  - "plugins/ecc/**"
+  - "plugins/ruby/**"
