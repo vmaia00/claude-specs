@@ -1,0 +1,37 @@
+name: codeql
+
+# Deep dataflow SAST (free for public repos). Complements semgrep with GitHub-native
+# "Code scanning" alerts. Scoped to first-party JavaScript/TypeScript (the .mjs hook layer
+# + scripts) via codeql-config.yml; Python is skipped because every .py in the repo is
+# vendored third-party code.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "30 6 * * 1"
+
+permissions:
+  contents: read
+  security-events: write
+
+concurrency:
+  group: codeql-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    name: analyze (javascript-typescript)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript-typescript
+          config-file: ./.github/codeql/codeql-config.yml
+          queries: security-extended
+      - name: Analyze
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:javascript-typescript"

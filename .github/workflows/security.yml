@@ -71,3 +71,18 @@ jobs:
           fi
           printf 'Checking:\n'; printf '  %s\n' "${files[@]}"
           shellcheck --severity=error "${files[@]}"
+
+  trufflehog:
+    name: trufflehog (verified secrets)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history so TruffleHog can determine the scan range
+      - name: Scan for verified secrets
+        # --only-verified: TruffleHog actively checks whether each candidate is a *live*
+        # credential, so this gates on real leaks with far fewer false positives than a
+        # pattern-only scanner. Complements gitleaks (pattern-based, catches more shapes).
+        uses: trufflesecurity/trufflehog@v3.95.6
+        with:
+          extra_args: --only-verified
