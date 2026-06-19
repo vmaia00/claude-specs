@@ -19,11 +19,11 @@ jobs:
     name: gitleaks (secret scan)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # full history so gitleaks can scan all commits in the PR/branch
       - name: Run gitleaks
-        uses: gitleaks/gitleaks-action@v2
+        uses: gitleaks/gitleaks-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # gitleaks-action is free for personal accounts and public repos (no GITLEAKS_LICENSE
@@ -36,7 +36,7 @@ jobs:
       contents: read
       security-events: write # to upload SARIF to the Security > Code scanning tab
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install semgrep
         run: pipx install semgrep
       - name: Scan
@@ -52,7 +52,7 @@ jobs:
             --sarif --output semgrep.sarif || true
       - name: Upload SARIF
         if: always()
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: semgrep.sarif
 
@@ -60,7 +60,7 @@ jobs:
     name: shellcheck (shell lint)
     runs-on: ubuntu-latest # shellcheck is preinstalled on GitHub-hosted ubuntu runners
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Lint shell scripts
         # Gate on error-severity only; warnings/style/info are reported but do not fail the build.
         run: |
@@ -76,7 +76,7 @@ jobs:
     name: trufflehog (verified secrets)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # full history so TruffleHog can determine the scan range
       - name: Scan for verified secrets
