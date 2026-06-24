@@ -1,0 +1,13 @@
+{
+  "name": "consulting",
+  "description": "Consulting-grade research reports in a two-phase agentic workflow: Phase 1 designs a rigorous analysis framework (chapter skeleton, named frameworks, per-chapter data requirements, visualization plan); other skills collect the data; Phase 2 synthesizes the final McKinsey/BCG-voice report with embedded charts, comparison tables, and a strict zero-hallucination policy. Opt-in.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Vasco Maia",
+    "email": "vasco.a.maia@outlook.com"
+  },
+  "homepage": "https://github.com/vmaia00/claude-specs",
+  "repository": "https://github.com/vmaia00/claude-specs",
+  "license": "MIT",
+  "keywords": ["consulting", "research", "market-analysis", "report", "frameworks", "analysis"]
+}

@@ -42,3 +42,20 @@ SOFTWARE.
 
 *To refresh: re-clone the upstream repo at a newer commit, re-copy the skill folders, and update
 the commit SHA above.*
+
+## Referenced libraries (not vendored)
+
+The skills below are **original reference material** authored for this repo. No third-party source is
+bundled — the library is installed per-project via its own tooling. Names and licenses are recorded
+here for attribution only.
+
+### react-bits — used by the `react-bits` skill
+- **Source:** https://github.com/davidhdev/react-bits
+- **Site:** https://reactbits.dev
+- **Author:** David Haz (`davidhdev`)
+- **License:** MIT + Commons Clause — free for personal and commercial use; the Commons Clause
+  forbids *selling* the components as a standalone product or competing offering.
+- **Referenced:** 2026-06-24
+
+Components are installed into the consuming project with `npx shadcn@latest add @react-bits/...` or
+jsrepo; nothing from react-bits lives in this repo.
