@@ -11,6 +11,7 @@ name. Update centrally here, then `git pull` lands in every consuming repo with 
 - **Agents** (`explorer`, `planner`, `builder`, `reviewer`) — the orchestrator subagent set.
 - **Command** (`new-project`) — generic sub-project scaffolder.
 - **Command** (`init-repo`) — seeds a minimal starter `CLAUDE.md` (+ `AGENTS.md` pointer) for a new repo's local layer.
+- **Skill** (`setup-ci`) — detects a repo's stack and scaffolds real GitHub Actions workflows for it: lint, tests, coverage, secret/SAST/CodeQL security scanning, tag-based release automation, and (only if a benchmark suite already exists) performance-regression tracking. Never fabricates a dimension the repo has no basis for.
 - **Hook** (`secret-scan`) — blocks Write/Edit/MultiEdit that contain real-looking credentials.
 - **Hook** (`session-start`) — injects a concise standing directive (orchestrate · prefer existing skills/agents · define-done-then-verify · gate changes · untrusted-content baseline) at every session start.
 - **Skills** (`diagnose`, `write-a-skill`, `handoff`, `zoom-out`, `caveman`) — curated engineering/productivity skills vendored from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT; see `plugins/core/docs/THIRD-PARTY-NOTICES.md`).

@@ -1,0 +1,55 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  vet:
+    name: vet + lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v6
+        with:
+          go-version: "<GO_VERSION>"
+      - run: go vet ./...
+      - name: golangci-lint
+        # Delete if the repo has no .golangci.yml — go vet above already runs unconditionally.
+        uses: golangci/golangci-lint-action@v7
+
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v6
+        with:
+          go-version: "<GO_VERSION>"
+      - run: go test -race -cover ./...
+
+  # Delete this job unless the repo actually ships per-OS/arch binaries (Step 3 in SKILL.md).
+  build-matrix:
+    name: build (${{ matrix.goos }}/${{ matrix.goarch }})
+    strategy:
+      matrix:
+        goos: [linux, darwin, windows]
+        goarch: [amd64, arm64]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v6
+        with:
+          go-version: "<GO_VERSION>"
+      - env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+        run: go build ./...

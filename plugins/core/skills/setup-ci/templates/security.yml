@@ -1,0 +1,71 @@
+name: security
+
+# Language-agnostic security baseline: secret scanning always applies; CodeQL only if
+# <CODEQL_LANGUAGES> is non-empty (the stack must be CodeQL-supported); dependency review only
+# if the repo has a lockfile. Delete whichever jobs don't apply to this repo before committing.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: security-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gitleaks:
+    name: gitleaks (secret scan)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # full history so gitleaks can scan all commits in the PR/branch
+      - name: Run gitleaks
+        uses: gitleaks/gitleaks-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  trufflehog:
+    name: trufflehog (verified secrets)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Scan for verified secrets
+        uses: trufflesecurity/trufflehog@v3.95.6
+        with:
+          extra_args: --only-verified
+
+  codeql:
+    name: codeql (<CODEQL_LANGUAGES>)
+    # Delete this job if the stack isn't in CodeQL's supported-language list.
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: github/codeql-action/init@v4
+        with:
+          languages: <CODEQL_LANGUAGES>
+          queries: security-extended
+      - uses: github/codeql-action/analyze@v4
+        with:
+          category: "/language:<CODEQL_LANGUAGES>"
+
+  dependency-review:
+    name: dependency review (new deps in this PR)
+    # Delete this job if the repo has no dependency manifest/lockfile.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/dependency-review-action@v4
