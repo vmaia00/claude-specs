@@ -1,0 +1,27 @@
+name: performance
+
+# Only add this workflow if Step 3 in SKILL.md found a real benchmark suite already in the
+# repo. CodSpeed instruments the benchmark run and flags statistically significant regressions
+# on the PR — it does not generate benchmarks for you.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  benchmarks:
+    name: codspeed
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      # <RUNTIME_SETUP> — actions/setup-node, actions/setup-python, etc., matching the stack.
+      - name: Run benchmarks
+        uses: CodSpeedHQ/action@v3
+        with:
+          # run-only mode works without a CodSpeed account; token-based upload needs
+          # CODSPEED_TOKEN as a repo secret for historical trend tracking.
+          run: <BENCH_CMD> # e.g. pytest bench/ --codspeed | cargo codspeed run | vitest bench

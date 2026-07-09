@@ -1,0 +1,46 @@
+name: release
+
+# Tag-triggered release with GitHub's native auto-generated notes. The "guard" job re-checks
+# whether a release for this tag already exists before publishing — protects against a
+# re-pushed/moved tag silently overwriting a prior release's notes.
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  guard:
+    name: check tag is new
+    runs-on: ubuntu-latest
+    outputs:
+      is-new: ${{ steps.check.outputs.is-new }}
+    steps:
+      - name: Check for an existing release on this tag
+        id: check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh release view "${{ github.ref_name }}" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            echo "is-new=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "is-new=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  release:
+    name: publish release
+    needs: guard
+    if: needs.guard.outputs.is-new == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      # <BUILD_STEPS> — insert this stack's build/package step(s) here if the release should
+      # attach built artifacts (binaries, wheels, tarballs). Skip entirely for source-only
+      # releases where the tag + auto-notes are the release.
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          # files: <ARTIFACT_GLOB>   # uncomment if attaching build artifacts

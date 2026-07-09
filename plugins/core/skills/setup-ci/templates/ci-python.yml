@@ -1,0 +1,40 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "<PYTHON_VERSION>"
+      - run: <INSTALL_CMD> # e.g. pip install -e ".[dev]" or poetry install
+      - run: <LINT_CMD> # e.g. ruff check .
+
+  test:
+    name: test (python <PYTHON_VERSION>)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "<PYTHON_VERSION>"
+      - run: <INSTALL_CMD>
+      - run: <TEST_CMD> # e.g. pytest --cov=<PACKAGE_NAME> --cov-report=xml, only if pytest-cov is a dependency
+      # - name: Upload coverage
+      #   uses: codecov/codecov-action@v5
+      #   with:
+      #     files: coverage.xml

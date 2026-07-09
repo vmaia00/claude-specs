@@ -1,0 +1,42 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "<NODE_VERSION>"
+          cache: "<PACKAGE_MANAGER>" # npm | pnpm | yarn — matches the detected lockfile
+      - run: <INSTALL_CMD> # e.g. npm ci
+      - run: <LINT_CMD> # e.g. npm run lint
+
+  test:
+    name: test (node <NODE_VERSION>)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "<NODE_VERSION>"
+          cache: "<PACKAGE_MANAGER>"
+      - run: <INSTALL_CMD>
+      - run: <TEST_CMD> # e.g. npm test -- --coverage, only add --coverage if the runner supports it
+      # - name: Upload coverage
+      #   uses: codecov/codecov-action@v5   # requires CODECOV_TOKEN repo secret for private repos
+      #   with:
+      #     files: <COVERAGE_REPORT_PATH>

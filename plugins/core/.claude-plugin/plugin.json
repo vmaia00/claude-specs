@@ -1,7 +1,7 @@
 {
   "name": "core",
-  "description": "Orchestrator foundations: generic builder/explorer/planner/reviewer agents, a new-project command, a secret-scan hook, and universal working principles. Repo-specific agents/rules live in the consuming repo's .claude/ and override these.",
-  "version": "0.5.3",
+  "description": "Orchestrator foundations: generic builder/explorer/planner/reviewer agents, scaffolding commands/skills (new-project, init-repo, setup-ci), a secret-scan hook, and universal working principles. Repo-specific agents/rules live in the consuming repo's .claude/ and override these.",
+  "version": "0.6.0",
   "author": {
     "name": "Vasco Maia",
     "email": "vasco.a.maia@outlook.com"
@@ -9,5 +9,5 @@
   "homepage": "https://github.com/vmaia00/claude-specs",
   "repository": "https://github.com/vmaia00/claude-specs",
   "license": "MIT",
-  "keywords": ["orchestrator", "conventions", "secrets", "hooks"]
+  "keywords": ["orchestrator", "conventions", "secrets", "hooks", "ci-cd"]
 }

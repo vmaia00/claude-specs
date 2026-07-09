@@ -10,9 +10,9 @@
     {
       "name": "core",
       "source": "./plugins/core",
-      "description": "Orchestrator foundations: generic builder/explorer/planner/reviewer agents, a new-project command, a secret-scan hook, and universal working principles.",
+      "description": "Orchestrator foundations: generic builder/explorer/planner/reviewer agents, scaffolding commands/skills (new-project, init-repo, setup-ci), a secret-scan hook, and universal working principles.",
       "category": "workflow",
-      "tags": ["orchestrator", "agents", "conventions", "secrets"]
+      "tags": ["orchestrator", "agents", "conventions", "secrets", "ci-cd"]
     },
     {
       "name": "ecc",
