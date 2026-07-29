@@ -13,5 +13,6 @@
   "MD036": false, // emphasis used instead of a heading
   "MD040": false, // language hint on fenced code
   "MD012": false, // multiple consecutive blank lines
-  "MD007": false // unordered list indentation
+  "MD007": false, // unordered list indentation
+  "MD060": false // table column style — the repo writes compact delimiter rows (|---|---|) everywhere, including plugins/core; the rule is not auto-fixable
 }
