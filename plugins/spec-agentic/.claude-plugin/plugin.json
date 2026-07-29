@@ -1,0 +1,13 @@
+{
+  "name": "spec-agentic",
+  "description": "A specification-writing doctrine and toolkit for work that will be executed by coding agents rather than a human team: declared executor contracts, per-claim provenance, stable resolvable IDs, impact maps and contract sets. Properties that read as noise to a senior engineer are load-bearing when the executor has no working memory and no editorial judgement.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Vasco Maia",
+    "email": "vasco.a.maia@outlook.com"
+  },
+  "homepage": "https://github.com/vmaia00/claude-specs",
+  "repository": "https://github.com/vmaia00/claude-specs",
+  "license": "MIT",
+  "keywords": ["spec", "documentation", "agentic", "traceability", "contracts"]
+}

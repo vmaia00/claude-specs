@@ -15,6 +15,20 @@
       "tags": ["orchestrator", "agents", "conventions", "secrets"]
     },
     {
+      "name": "spec-agentic",
+      "source": "./plugins/spec-agentic",
+      "description": "Specification doctrine and toolkit for work executed by coding agents: declared-executor headers, a LOCKED/WORKING/OPEN facts ledger, stable anchor IDs with CI verifiers, an OpenAPI contract set, impact maps, and a read-only spec auditor. Pairs with spec-human.",
+      "category": "workflow",
+      "tags": ["spec", "documentation", "agentic", "traceability", "contracts"]
+    },
+    {
+      "name": "spec-human",
+      "source": "./plugins/spec-human",
+      "description": "Specification doctrine and toolkit for work executed by a human engineering team: what and why not how, length budgets, a machine-tell checklist, the constraint-vs-method cut, ADRs, a sample-chapter-first delivery gate, and a tech-lead-reader audit agent. Pairs with spec-agentic.",
+      "category": "workflow",
+      "tags": ["spec", "documentation", "product-requirements", "adr", "readability"]
+    },
+    {
       "name": "ecc",
       "source": "./plugins/ecc",
       "description": "Vendored full copy of affaan-m/ECC v2.0.0 — 64 agents, 262 skills, 84 commands (MIT). Opt-in; mostly language/framework-specific.",
