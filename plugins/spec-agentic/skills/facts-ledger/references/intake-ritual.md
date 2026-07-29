@@ -18,6 +18,7 @@ If no valid source is produced: **stop**. Record the item as OPEN, state exactly
 close it, and tell the requester. Do not lock on the strength of someone remembering the meeting.
 
 Common near-misses that are *not* sources:
+
 - A decision document of your own marked "confirmed" — check *whose* decision it records. Your own
   approval of your own proposal is not counterparty confirmation.
 - A screenshot or as-built artefact from a system built by a third party. It is evidence of what
