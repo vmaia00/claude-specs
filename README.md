@@ -46,7 +46,9 @@ Point Claude Code at this folder directly instead of GitHub:
 | **Shared** (pulled) | this repo's `core` plugin | generic `builder`, `secret-scan`, principles |
 | **Local** (per repo) | each repo's `.claude/` | domain agents/hooks that override the shared ones |
 
-See `BOOTSTRAP.md` to stand up a brand-new repo on these foundations.
+See `BOOTSTRAP.md` to stand up a brand-new repo on these foundations, and
+`REPO-SETUP.md` for the GitHub side of a repo other people will work in:
+who can merge, the policy gates, the templates, and the project board.
 
 ## Companion tools (install separately, not vendored)
 
