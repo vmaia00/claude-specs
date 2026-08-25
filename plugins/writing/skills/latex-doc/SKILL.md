@@ -34,11 +34,12 @@ python scripts/build_latex.py DOC.md --logo path/to/logo.png
 ```
 
 Source-document contract:
-- **Title** = the first `# ` heading (goes on the cover only).
+
+- **Title** = the first `#` heading (goes on the cover only).
 - **Cover metadata** = a leading two-column pipe table `| **Key** | Value |` in the
   first 40 lines (e.g. Cliente, Fornecedor, Documento, Audiência, Versão, Data,
   Classificação). The `Documento` row becomes the cover eyebrow.
-- **Body** starts at the first `## `; every `##` becomes a chapter on a new page
+- **Body** starts at the first `##`; every `##` becomes a chapter on a new page
   (`--top-level-division=chapter --shift-heading-level-by=-1`). LaTeX numbering is
   off — number headings in the Markdown itself.
 - **Figures**: reference `.svg` freely; the driver swaps in a sibling `.png`.

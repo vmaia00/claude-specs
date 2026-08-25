@@ -4,6 +4,7 @@ Some skills bundled in this plugin are vendored **verbatim** from third-party MI
 Their copyright and license are retained below, as the MIT License requires.
 
 ## mattpocock/skills
+
 - **Source:** https://github.com/mattpocock/skills
 - **Commit:** `694fa30311e02c2639942308513555e61ee84a6f`
 - **Vendored:** 2026-06-16
@@ -16,6 +17,7 @@ The `caveman` skill in mattpocock/skills is itself adapted from **JuliusBrussee/
 caveman's auto-activation hook or its JS/Python sub-skills (`/caveman-commit|review|stats`).
 
 ### MIT License (mattpocock/skills)
+
 ```
 MIT License
 
@@ -44,6 +46,7 @@ SOFTWARE.
 the commit SHA above.*
 
 ## phuryn/pm-skills
+
 - **Source:** https://github.com/phuryn/pm-skills
 - **Commit:** `a0cd730`
 - **Vendored:** originally into the (now-removed) `pm` plugin; relocated here 2026-08-25 when that
@@ -58,6 +61,7 @@ retargeted to the host project's docs convention, and the test-ID convention ali
 org's `TF-NN` scheme.
 
 ### MIT License (phuryn/pm-skills)
+
 ```
 MIT License
 
@@ -89,6 +93,7 @@ bundled — the library is installed per-project via its own tooling. Names and 
 here for attribution only.
 
 ### react-bits — used by the `react-bits` skill
+
 - **Source:** https://github.com/davidhdev/react-bits
 - **Site:** https://reactbits.dev
 - **Author:** David Haz (`davidhdev`)

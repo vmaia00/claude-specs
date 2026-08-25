@@ -62,6 +62,7 @@ See tdd-process for the full gate cycle.
 ## Core Patterns
 
 ### 1. The `.call` Pattern
+
 ```ruby
 def self.call(params)
   new(params).call
@@ -78,6 +79,7 @@ end
 ```
 
 ### 2. Batch Processing + Per-Item Rescue (Partial Success)
+
 ```ruby
 def call
   results = @items.each_with_object({ successful: [], failed: [] }) do |item, acc|
@@ -91,6 +93,7 @@ end
 ```
 
 ### 3. Class-only Services (Static Methods)
+
 When no instance state is needed, use ONLY class methods — no `initialize`, no instance variables. Suitable for validators, formatters, and argument-only helpers.
 
 ```ruby
@@ -104,6 +107,7 @@ end
 ```
 
 ### 4. Orchestrator Delegation (≤20-line `call`)
+
 ```ruby
 def call
   user_result = UserCreationService.call(@params)
