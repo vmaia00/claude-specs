@@ -53,6 +53,7 @@ Configuration → Routing → Controllers → Views → Models → Associations 
 | Jobs | Idempotent, retriable, appropriate backend |
 
 **Edge case handling:**
+
 - **Empty diff**: State "No code changes to review" and stop.
 - **Large diff (>50 files)**: Prioritize **Critical** checks first; sample key files for **Suggestion** items.
 - **Single file**: Apply all relevant review areas to that file.
@@ -67,6 +68,7 @@ Use **only** these labels:
 - **`Nice to have`** — small style or micro-optimization.
 
 **Always Critical (flag every occurrence):** *(feed these flags into the review-council deep-review pipeline as reference input rather than running this skill as a competing review path)*
+
 - `params.require(...).permit!` — privilege escalation
 - `html_safe` or `raw` on user-supplied content — XSS
 - **Business logic inside a controller action** — pricing, tax, or domain calculation
@@ -76,6 +78,7 @@ Use **only** these labels:
 ### Re-review Criteria
 
 Re-diff the branch after:
+
 1. **Any** Critical fix (mandatory).
 2. **>3** Suggestion fixes or any architecture change.
 3. Changes affecting queries, auth, or migrations.
@@ -90,6 +93,7 @@ Re-diff the branch after:
 Group findings by severity. The canonical output shape is shown below; [assets/examples.md](./assets/examples.md) contains additional JSON and PR-comment variants if available.
 
 1. **Findings Format**:
+
    ```text
    ## Review — <PR title or area>
 
@@ -108,7 +112,9 @@ Group findings by severity. The canonical output shape is shown below; [assets/e
 
    - [ ] Code review before merge
    ```
+
    Example (inline):
+
    ```text
    ## Review — Add discount pricing
 
@@ -125,6 +131,7 @@ Group findings by severity. The canonical output shape is shown below; [assets/e
 
    - [ ] Code review before merge
    ```
+
    Findings must come from an actual diff or provided file contents. Do not present a simulated PR review as if it were a completed review of real code.
 2. **Tagging**: Tag (Area) from Controllers, Routing, Views, Models, Queries, Migrations, Validations, Security, Caching, Jobs, Tests. Cover **≥4** distinct areas if applicable.
 3. **Task-list handoff** — Always include a `Code review before merge` task or task-list line.

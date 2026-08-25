@@ -61,6 +61,7 @@ carries an `origin:` frontmatter field naming its source.
 ## What was NOT copied (and why)
 
 To keep the plugin focused and avoid duplicating the `core` plugin, the following were left out:
+
 - **Overlap with `core`:** superpowers' `handoff`/`handoff-list`/`handoff-resume` (→ core `handoff`),
   `systematic-debugging` (→ core `diagnose`), `writing-skills` (→ core `write-a-skill`).
 - **Generic workflow/meta** (superpowers): `brainstorming`, `writing-plans`, `executing-plans`,

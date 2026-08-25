@@ -14,6 +14,7 @@ Output follows McKinsey/BCG consulting voice standards. Report language follows 
 ## Data Authenticity Protocol
 
 **Strict adherence rule**: all data presented in the report and visualised in charts MUST come from collected research findings or user-supplied documents.
+
 - **No hallucinations**: do not invent, estimate, or simulate data. If data is missing, state "Data not available" rather than fabricating numbers.
 - **Traceable sources**: every major claim and chart must be traceable back to a specific source.
 
@@ -23,13 +24,13 @@ Output follows McKinsey/BCG consulting voice standards. Report language follows 
 - User provides a research subject and needs a structured analysis framework before research begins
 - User provides research findings or documents to be synthesised into a consulting-style report
 
-# Designing the Analysis Framework
+## Designing the Analysis Framework
 
-## Purpose
+### Purpose
 
 Given a **research subject** (e.g., "Gen-Z Skincare Market Analysis", "NEV Industry Competitive Landscape", "Brand X Consumer Profiling"), produce a complete **analysis framework** that serves as the blueprint for research and report writing.
 
-## Inputs
+### Inputs
 
 | Input | Description | Required |
 |-------|-------------|----------|
@@ -38,7 +39,7 @@ Given a **research subject** (e.g., "Gen-Z Skincare Market Analysis", "NEV Indus
 | **Specific Angles** | Any particular angles or hypotheses the user wants explored | Optional |
 | **Domain** | The analytical domain: market, finance, industry, brand, consumer, investment, etc. | Inferred |
 
-## Step 1: Understand the Research Subject
+### Step 1: Understand the Research Subject
 
 - Parse the research subject to identify the **core entity** (market, brand, product, industry, consumer segment, financial instrument, etc.)
 - Identify the **analytical domain** and its **natural analytical dimensions**:
@@ -53,11 +54,11 @@ Given a **research subject** (e.g., "Gen-Z Skincare Market Analysis", "NEV Indus
 | Investment Due Diligence | Business model, financial health, management assessment, market opportunity, risk factors, exit pathways |
 | Competitive Intelligence | Competitor identification, strategic comparison, SWOT analysis, differentiated positioning, market dynamics |
 
-## Step 2: Select Analysis Frameworks & Models
+### Step 2: Select Analysis Frameworks & Models
 
 Based on the identified domain and research subject, select **one or more** professional analysis frameworks to structure the reasoning in each chapter. The chosen frameworks guide the **Analysis Logic** in the chapter skeleton (Step 3).
 
-### Strategic & Environmental Analysis
+#### Strategic & Environmental Analysis
 
 | Framework | Description | Best For |
 |-----------|-------------|----------|
@@ -67,7 +68,7 @@ Based on the identified domain and research subject, select **one or more** prof
 | **Porter's Diamond Model** | Factor conditions, demand conditions, related industries, firm strategy & structure | National/regional competitive advantage analysis |
 | **VRIO Analysis** | Value, Rarity, Imitability, Organisation | Core competency assessment, resource advantage analysis |
 
-### Market & Growth Analysis
+#### Market & Growth Analysis
 
 | Framework | Description | Best For |
 |-----------|-------------|----------|
@@ -78,7 +79,7 @@ Based on the identified domain and research subject, select **one or more** prof
 | **TAM-SAM-SOM** | Total / Serviceable / Obtainable Market | Market sizing, opportunity quantification |
 | **Technology Adoption Lifecycle** | Innovators → Early Adopters → Early Majority → Late Majority → Laggards | Emerging technology/category penetration analysis |
 
-### Consumer & Behavioural Analysis
+#### Consumer & Behavioural Analysis
 
 | Framework | Description | Best For |
 |-----------|-------------|----------|
@@ -88,7 +89,7 @@ Based on the identified domain and research subject, select **one or more** prof
 | **Maslow's Hierarchy of Needs** | Physiological → Safety → Social → Esteem → Self-actualisation | Consumer psychology analysis, product value proposition |
 | **Jobs-to-be-Done (JTBD)** | The "job" a user needs to accomplish in a specific context | Demand insight, product innovation direction |
 
-### Financial & Valuation Analysis
+#### Financial & Valuation Analysis
 
 | Framework | Description | Best For |
 |-----------|-------------|----------|
@@ -97,7 +98,7 @@ Based on the identified domain and research subject, select **one or more** prof
 | **Comparable Company Analysis** | PE, PB, PS, EV/EBITDA multiples comparison | Relative valuation, peer benchmarking |
 | **EVA (Economic Value Added)** | After-tax operating profit - Cost of capital | Value creation capability assessment |
 
-### Competitive & Strategic Positioning
+#### Competitive & Strategic Positioning
 
 | Framework | Description | Best For |
 |-----------|-------------|----------|
@@ -107,7 +108,7 @@ Based on the identified domain and research subject, select **one or more** prof
 | **Blue Ocean Strategy** | Value curve, four-action framework (Eliminate-Reduce-Raise-Create) | Differentiated innovation, new market space creation |
 | **Perceptual Mapping** | Plot brand positions along two consumer-perceived dimensions | Brand positioning analysis, market gap discovery |
 
-### Industry & Supply Chain Analysis
+#### Industry & Supply Chain Analysis
 
 | Framework | Description | Best For |
 |-----------|-------------|----------|
@@ -115,7 +116,7 @@ Based on the identified domain and research subject, select **one or more** prof
 | **Gartner Hype Cycle** | Technology Trigger → Peak of Inflated Expectations → Trough of Disillusionment → Slope of Enlightenment → Plateau of Productivity | Emerging technology maturity assessment |
 | **GE-McKinsey Matrix** | Industry Attractiveness × Competitive Strength | Business portfolio prioritisation, investment decisions |
 
-### Selection Principles
+#### Selection Principles
 
 1. **Domain-first**: based on the domain identified in Step 1, select **2-4** most relevant frameworks from the toolkit above
 2. **Complementary**: choose complementary rather than overlapping frameworks (e.g., macro-level with PESTEL + micro-level with Porter's Five Forces)
@@ -123,7 +124,7 @@ Based on the identified domain and research subject, select **one or more** prof
 4. **Data-feasible**: selected frameworks must be supportable by data obtainable through ordinary research — if the data a framework requires cannot reasonably be found, downgrade or substitute
 5. **Explicit mapping**: in the chapter skeleton, explicitly annotate which framework each chapter uses and how it is applied
 
-### Framework Selection Output Format
+#### Framework Selection Output Format
 
 ```markdown
 | Chapter | Selected Framework(s) | Application |
@@ -131,7 +132,7 @@ Based on the identified domain and research subject, select **one or more** prof
 | Market Size & Growth Trends | TAM-SAM-SOM + Product Life Cycle | TAM-SAM-SOM to quantify market space, PLC to determine market stage |
 ```
 
-## Step 3: Design Chapter Skeleton
+### Step 3: Design Chapter Skeleton
 
 Produce a hierarchical chapter structure. Each chapter must include:
 
@@ -142,7 +143,7 @@ Produce a hierarchical chapter structure. Each chapter must include:
 5. **Data Requirements** — see Step 4
 6. **Visualisation Plan** — see Step 5
 
-## Step 4: Define Data Requirements Per Chapter
+### Step 4: Define Data Requirements Per Chapter
 
 For each chapter, specify **exactly what data needs to be collected**. This is the research checklist that drives the subsequent WebSearch/WebFetch work.
 
@@ -157,7 +158,7 @@ For each chapter, specify **exactly what data needs to be collected**. This is t
 
 Output as a per-chapter Markdown table with one row per data requirement, e.g. `| 1 | Market size (billion CNY) | Quantitative | Industry reports | "China skincare market size 2024" | P0 | 2020-2025 |`.
 
-## Step 5: Define Visualisation & Content Plan Per Chapter
+### Step 5: Define Visualisation & Content Plan Per Chapter
 
 For each chapter, specify the **planned visualisation** and **argument structure** for the final report:
 
@@ -168,7 +169,7 @@ For each chapter, specify the **planned visualisation** and **argument structure
 
 This plan specifies *what* each chart shows, not *how* to render it — rendering is delegated to the built-in **artifact-design** and **dataviz** skills at report-writing time.
 
-## Step 6: Output the Complete Analysis Framework
+### Step 6: Output the Complete Analysis Framework
 
 Assemble all outputs into a single, structured **Analysis Framework Document**:
 
@@ -200,7 +201,7 @@ Assemble all outputs into a single, structured **Analysis Framework Document**:
 [Consolidate all P0/P1 data requirements across chapters into a deduplicated research checklist]
 ```
 
-## Framework Quality Checklist
+### Framework Quality Checklist
 
 - [ ] Framework covers all natural analytical dimensions for the identified domain
 - [ ] 2-4 named frameworks are selected, complementary, data-feasible, and explicitly mapped to chapters
@@ -210,15 +211,16 @@ Assemble all outputs into a single, structured **Analysis Framework Document**:
 - [ ] Data priorities (P0/P1/P2) are assigned realistically — P0 items are essential for core arguments
 - [ ] The Research Task List is comprehensive and deduplicated
 
-# From Framework to Report
+## From Framework to Report
 
 Data collection happens via **ordinary research**: run the framework's search keywords through WebSearch/WebFetch, read user-supplied documents, and record findings per chapter — noting each source's title, URL, and access date. The report is then written against the phase-1 framework: chapters follow the skeleton, charts follow the visualisation plan, and every number traces to a collected source. If P0 data cannot be found, flag it explicitly in the report rather than filling the gap.
 
-## Report Writing Guidance
+### Report Writing Guidance
 
 **Structure**: Abstract → 1. Introduction → 2...N. Body chapters (from the skeleton) → N+1. Conclusion → N+2. References. Begin directly with `# Report Title`; no preamble, no horizontal rules (`---`).
 
 **Per sub-chapter**, follow the **"Visual Anchor → Data Contrast → Integrated Analysis"** flow:
+
 1. **Visual anchor**: the planned chart (or a comparison table where no chart applies)
 2. **Data contrast table**: key metrics side by side — every number from collected data
 3. **Integrated narrative**: "What → Why → So What", ending with a robust analytical paragraph (min. 200 words) that synthesises the findings into a strategic judgement; optionally close with a punchy one-liner in a blockquote (`>`)
@@ -231,7 +233,7 @@ Data collection happens via **ordinary research**: run the framework's search ke
 
 **Citations**: cite sources inline with title + URL + access date. If the client or target publication specifies a citation standard, follow that standard for the References section; otherwise a plain title/URL/access-date list is sufficient.
 
-## Settings
+### Settings
 
 ```
 output_locale = en_uk  # British English by default; configurable per user request

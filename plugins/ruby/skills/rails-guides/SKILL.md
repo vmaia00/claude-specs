@@ -25,6 +25,7 @@ resolve the topic below, build the versioned URL, and fetch the live page with W
 ## Topic map (`<page>` values)
 
 ### Getting started & configuration
+
 | Topic | Page |
 |---|---|
 | Rails basics, MVC, first app | `getting_started` |
@@ -34,6 +35,7 @@ resolve the topic below, build the versioned URL, and fetch the live page with W
 | Boot sequence, railties, engines | `initialization` |
 
 ### Active Record & Active Model
+
 | Topic | Page |
 |---|---|
 | Models, CRUD, conventions | `active_record_basics` |
@@ -49,6 +51,7 @@ resolve the topic below, build the versioned URL, and fetch the live page with W
 | ActiveModel outside ActiveRecord, form objects | `active_model_basics` |
 
 ### Controllers & routing
+
 | Topic | Page |
 |---|---|
 | Controllers, params, filters, sessions, cookies | `action_controller_overview` |
@@ -56,6 +59,7 @@ resolve the topic below, build the versioned URL, and fetch the live page with W
 | Resources, namespaces, constraints, URL helpers | `routing` |
 
 ### Views & frontend / Hotwire
+
 | Topic | Page |
 |---|---|
 | Templates, partials, layouts, formats | `action_view_overview` |
@@ -66,6 +70,7 @@ resolve the topic below, build the versioned URL, and fetch the live page with W
 | Rich text with Trix, attachments | `action_text_overview` |
 
 ### Jobs, mailers, storage & real-time
+
 | Topic | Page |
 |---|---|
 | Job classes, queues, retry, test helpers | `active_job_basics` |
@@ -75,6 +80,7 @@ resolve the topic below, build the versioned URL, and fetch the live page with W
 | WebSockets, channels, broadcasting | `action_cable_overview` |
 
 ### Testing, security & performance
+
 | Topic | Page |
 |---|---|
 | Minitest, fixtures, test types, assertions | `testing` |
@@ -84,6 +90,7 @@ resolve the topic below, build the versioned URL, and fetch the live page with W
 | Puma, connection pooling, GC tuning | `tuning_performance_for_deployment` |
 
 ### Internationalisation, API & Rack
+
 | Topic | Page |
 |---|---|
 | Translation files, locale, pluralisation | `i18n` |
@@ -91,6 +98,7 @@ resolve the topic below, build the versioned URL, and fetch the live page with W
 | Middleware stack, Rack integration | `rails_on_rack` |
 
 ### Extending Rails & advanced
+
 | Topic | Page |
 |---|---|
 | Mountable engines, isolated namespaces | `engines` |
