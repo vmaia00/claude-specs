@@ -1,12 +1,18 @@
 {
   "name": "ecc",
   "description": "Vendored full copy of ECC (affaan-m/ECC) v2.0.0: 64 agents, 262 skills, 84 commands. MIT-licensed — see LICENSE and ATTRIBUTION.md. Most components are language/framework-specific; install only if you want the whole catalog.",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "author": {
     "name": "affaan-m and ECC contributors"
   },
   "homepage": "https://github.com/affaan-m/ECC",
   "repository": "https://github.com/affaan-m/ECC",
   "license": "MIT",
-  "keywords": ["ecc", "agents", "skills", "commands", "vendored"]
+  "keywords": [
+    "ecc",
+    "agents",
+    "skills",
+    "commands",
+    "vendored"
+  ]
 }

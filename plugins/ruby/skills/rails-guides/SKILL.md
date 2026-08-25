@@ -1,87 +1,104 @@
 ---
 origin: superpowers-ruby
 name: rails-guides
-description: Official Rails documentation. Use when asked about any Rails-specific topic including ActiveRecord, routing, controllers, views, mailers, jobs, Action Cable, Action Text, Active Storage, migrations, validations, callbacks, associations, caching, security, or internals.
+description: Maps Rails topics to the official versioned guides at guides.rubyonrails.org for WebFetch. Use when asked about any Rails-specific topic including ActiveRecord, routing, controllers, views, mailers, jobs, Action Cable, Action Text, Active Storage, migrations, validations, callbacks, associations, caching, security, or internals — resolve the topic to its guide URL, substitute the project's exact Rails version, and fetch the live page.
 ---
 
 # Rails Guides
 
-Official Rails documentation for reference during development.
+Topic → URL index for the official Rails guides. **Do not answer Rails questions from memory** —
+resolve the topic below, build the versioned URL, and fetch the live page with WebFetch.
 
-## Topic Map
+> **Note:** this skill previously vendored ~48 offline copies of the guides under `references/`.
+> That directory was removed deliberately (stale snapshots drift from the project's Rails version).
+> Re-vendor version-matched guides only if offline grounding proves necessary.
 
-### Getting Started
-- `references/getting_started.md` — Rails basics, MVC overview, first app walkthrough
-- `references/command_line.md` — `rails` command, generators, rake tasks
-- `references/configuring.md` — Environments, initializers, credentials, database.yml
-- `references/autoloading_and_reloading_constants.md` — Zeitwerk, module naming, reload behavior
-- `references/initialization.md` — Rails boot sequence, railties, engines
+## How to use
 
-### Active Record
-- `references/active_record_basics.md` — Models, CRUD, conventions, migrations
-- `references/active_record_querying.md` — Finders, scopes, joins, includes, explain
-- `references/active_record_validations.md` — Built-in validators, custom validators, errors
-- `references/active_record_callbacks.md` — Lifecycle hooks, after_commit, skip_callback
-- `references/association_basics.md` — belongs_to, has_many, has_one, HABTM, polymorphic
-- `references/active_record_migrations.md` — Schema changes, reversible migrations, db:migrate
-- `references/active_record_encryption.md` — Encrypting attributes at rest
-- `references/active_record_composite_primary_keys.md` — Multi-column primary keys
-- `references/active_record_multiple_databases.md` — Multi-DB setup, sharding, replicas
-- `references/active_record_postgresql.md` — PostgreSQL-specific features (hstore, jsonb, arrays)
-- `references/active_model_basics.md` — ActiveModel outside ActiveRecord, form objects
+1. Find the project's **exact Rails version** in `Gemfile.lock` (the `rails (X.Y.Z)` line).
+2. Build the URL: `https://guides.rubyonrails.org/v<VERSION>/<page>.html` — e.g. Rails 7.1.3 →
+   `https://guides.rubyonrails.org/v7.1/active_record_querying.html` (major.minor is sufficient;
+   full `vX.Y.Z` also resolves).
+3. WebFetch that page and ground the answer in it, not in memory. If no version is known, fall
+   back to the unversioned URL (latest stable): `https://guides.rubyonrails.org/<page>.html`.
 
-### Action Controller
-- `references/action_controller_overview.md` — Controllers, params, filters, sessions, cookies
-- `references/action_controller_advanced_topics.md` — Streaming, live, metal, http auth
-- `references/routing.md` — Resources, namespaces, constraints, named routes, URL helpers
+## Topic map (`<page>` values)
 
-### Action View
-- `references/action_view_overview.md` — Templates, partials, layouts, formats
-- `references/action_view_helpers.md` — form_with, link_to, tag, content_tag, asset helpers
-- `references/form_helpers.md` — form_with, field helpers, nested forms, uploads
-- `references/layouts_and_rendering.md` — render, redirect_to, respond_to, layout inheritance
+### Getting started & configuration
+| Topic | Page |
+|---|---|
+| Rails basics, MVC, first app | `getting_started` |
+| `rails` command, generators, rake tasks | `command_line` |
+| Environments, initialisers, credentials, database.yml | `configuring` |
+| Zeitwerk autoloading, module naming, reload behaviour | `autoloading_and_reloading_constants` |
+| Boot sequence, railties, engines | `initialization` |
 
-### Frontend / Hotwire
-- `references/working_with_javascript_in_rails.md` — Import maps, Turbo, Stimulus overview
-- `references/action_text_overview.md` — Rich text with Trix, attachments
+### Active Record & Active Model
+| Topic | Page |
+|---|---|
+| Models, CRUD, conventions | `active_record_basics` |
+| Finders, scopes, joins, includes, explain | `active_record_querying` |
+| Built-in and custom validators, errors | `active_record_validations` |
+| Lifecycle hooks, after_commit, skip_callback | `active_record_callbacks` |
+| belongs_to, has_many, polymorphic, eager loading | `association_basics` |
+| Schema changes, reversible migrations | `active_record_migrations` |
+| Encrypting attributes at rest | `active_record_encryption` |
+| Composite primary keys | `active_record_composite_primary_keys` |
+| Multi-DB setup, sharding, replicas | `active_record_multiple_databases` |
+| PostgreSQL-specific features (jsonb, arrays) | `active_record_postgresql` |
+| ActiveModel outside ActiveRecord, form objects | `active_model_basics` |
 
-### Jobs & Mailers
-- `references/active_job_basics.md` — Job classes, queues, retry, test helpers
-- `references/action_mailer_basics.md` — Mailers, templates, deliveries, previews
-- `references/action_mailbox_basics.md` — Incoming email routing and processing
+### Controllers & routing
+| Topic | Page |
+|---|---|
+| Controllers, params, filters, sessions, cookies | `action_controller_overview` |
+| Streaming, live, metal, HTTP auth | `action_controller_advanced_topics` |
+| Resources, namespaces, constraints, URL helpers | `routing` |
 
-### Storage
-- `references/active_storage_overview.md` — File uploads, variants, direct uploads, S3/GCS/Azure
+### Views & frontend / Hotwire
+| Topic | Page |
+|---|---|
+| Templates, partials, layouts, formats | `action_view_overview` |
+| form_with, link_to, tag, asset helpers | `action_view_helpers` |
+| Field helpers, nested forms, uploads | `form_helpers` |
+| render, redirect_to, respond_to, layout inheritance | `layouts_and_rendering` |
+| Import maps, Turbo, Stimulus overview | `working_with_javascript_in_rails` |
+| Rich text with Trix, attachments | `action_text_overview` |
 
-### Testing
-- `references/testing.md` — Minitest, fixtures, test types, helpers, assertions
+### Jobs, mailers, storage & real-time
+| Topic | Page |
+|---|---|
+| Job classes, queues, retry, test helpers | `active_job_basics` |
+| Mailers, templates, deliveries, previews | `action_mailer_basics` |
+| Incoming email routing | `action_mailbox_basics` |
+| File uploads, variants, direct uploads, S3/GCS | `active_storage_overview` |
+| WebSockets, channels, broadcasting | `action_cable_overview` |
 
-### Real-Time
-- `references/action_cable_overview.md` — WebSockets, channels, broadcasting, connections
+### Testing, security & performance
+| Topic | Page |
+|---|---|
+| Minitest, fixtures, test types, assertions | `testing` |
+| SQL injection, XSS, CSRF, mass assignment | `security` |
+| Fragment/action/HTTP caching, cache stores | `caching_with_rails` |
+| Sprockets, Propshaft, precompile, digests | `asset_pipeline` |
+| Puma, connection pooling, GC tuning | `tuning_performance_for_deployment` |
 
-### Security & Performance
-- `references/security.md` — SQL injection, XSS, CSRF, mass assignment, secure headers
-- `references/caching_with_rails.md` — Fragment, action, HTTP caching, cache stores
-- `references/asset_pipeline.md` — Sprockets, Propshaft, precompile, digests
-- `references/tuning_performance_for_deployment.md` — Puma, connection pooling, GC
+### Internationalisation, API & Rack
+| Topic | Page |
+|---|---|
+| Translation files, locale, pluralisation | `i18n` |
+| API-only Rails, slim middleware stack | `api_app` |
+| Middleware stack, Rack integration | `rails_on_rack` |
 
-### Internationalization
-- `references/i18n.md` — Translation files, locale, pluralization, date formats
-
-### API & Rack
-- `references/api_app.md` — API-only Rails, slim middleware stack
-- `references/rails_on_rack.md` — Middleware stack, Rack integration
-
-### Extending Rails
-- `references/engines.md` — Mountable engines, isolated namespaces, hooks, testing
-- `references/generators.md` — Custom generators, templates, overriding defaults
-- `references/plugins.md` — Creating gem-based plugins, core extensions, testing
-
-### Advanced
-- `references/active_support_core_extensions.md` — String, Array, Hash, Date extensions
-- `references/active_support_instrumentation.md` — Notifications, log subscribers
-- `references/association_basics.md` — Association options, eager loading strategies
-- `references/debugging_rails_applications.md` — debug gem, logger, web-console, byebug
-- `references/error_reporting.md` — Error::Reporter, Sentry integration
-- `references/threading_and_code_execution.md` — Thread safety, executor, reloader
-- `references/upgrading_ruby_on_rails.md` — Version upgrade paths, deprecation handling
+### Extending Rails & advanced
+| Topic | Page |
+|---|---|
+| Mountable engines, isolated namespaces | `engines` |
+| Custom generators, templates | `generators` |
+| Gem-based plugins, core extensions | `plugins` |
+| String/Array/Hash/Date core extensions | `active_support_core_extensions` |
+| Notifications, log subscribers | `active_support_instrumentation` |
+| debug gem, logger, web-console | `debugging_rails_applications` |
+| Error::Reporter, Sentry integration | `error_reporting` |
+| Thread safety, executor, reloader | `threading_and_code_execution` |
+| Version upgrade paths, deprecations | `upgrading_ruby_on_rails` |

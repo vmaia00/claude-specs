@@ -1,7 +1,7 @@
 ---
 origin: superpowers-ruby
 name: ruby
-description: Use when writing, reviewing, or debugging pure Ruby code — idiomatic patterns, modern 3.x+ features (pattern matching, Data.define, endless methods), error handling conventions (raise vs fail, result objects), memoization, and performance idioms. For Rails use rails-guides. For testing use minitest. For code style use sandi-metz-rules.
+description: Use when writing, reviewing, or debugging pure Ruby code — idiomatic patterns, modern 3.x+ features (pattern matching, Data.define, endless methods), error handling conventions (raise vs fail, result objects), memoization, and performance idioms. For Rails use rails-guides. For testing use minitest.
 ---
 
 # Ruby Language Skill

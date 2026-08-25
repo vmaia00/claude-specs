@@ -23,7 +23,7 @@ Analyzes your codebase and generates a cohesive design system:
 ```
 1. Scan CSS/Tailwind/styled-components for existing patterns
 2. Extract: colors, typography, spacing, border-radius, shadows, breakpoints
-3. Research 3 competitor sites for inspiration (via browser MCP)
+3. Research 3 competitor sites for inspiration (optional — requires a browser MCP)
 4. Propose a design token set (JSON + CSS custom properties)
 5. Generate DESIGN.md with rationale for each decision
 6. Create an interactive HTML preview page (self-contained, no deps)

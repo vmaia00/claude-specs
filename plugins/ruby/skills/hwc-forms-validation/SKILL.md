@@ -2,7 +2,7 @@
 origin: superpowers-ruby
 name: hwc-forms-validation
 description: >-
-  Handle Hotwire form workflows: form submission lifecycle, inline editing, validation errors, typeahead/autocomplete, modal forms, and external form controls. Prefer this skill when the core problem is correctness and UX of form interaction. Use hwc-navigation-content for pagination/tabs/filter navigation, hwc-realtime-streaming for WebSocket/Turbo Stream broadcasting, hwc-media-content for image/video/audio behavior, hwc-ux-feedback for generic loading/transition polish, and hwc-stimulus-fundamentals for framework-level Stimulus APIs not tied to forms.
+  Handle Hotwire form workflows: form submission lifecycle, inline editing, validation errors, typeahead/autocomplete, modal forms, and external form controls. Prefer this skill when the core problem is correctness and UX of form interaction. Use hwc-navigation-content for pagination/tabs/filter navigation, hwc-realtime-streaming for WebSocket/Turbo Stream broadcasting, hwc-ux-feedback for generic loading/transition polish, and hwc-stimulus-fundamentals for framework-level Stimulus APIs not tied to forms.
 ---
 
 # Forms & Validation
@@ -41,6 +41,5 @@ Use `references/INDEX.md` for the full catalog.
 
 - Navigation/history/cache behavior: use `hwc-navigation-content`
 - WebSocket or Turbo Stream push updates: use `hwc-realtime-streaming`
-- Media upload/playback behavior: use `hwc-media-content`
 - Generic UX polish (spinners/progress/transitions): use `hwc-ux-feedback`
 - General Stimulus API design questions: use `hwc-stimulus-fundamentals`

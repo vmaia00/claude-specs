@@ -2,7 +2,7 @@
 origin: superpowers-ruby
 name: hwc-ux-feedback
 description: >-
-  Implement cross-cutting Hotwire UX feedback patterns: loading states, busy indicators, progress bars, optimistic UI, render interception, and view/page transitions. Prefer this skill when the core goal is perceived performance and user feedback, independent of a single feature domain. Use hwc-forms-validation for form correctness and validation behavior, hwc-navigation-content for navigation/history/cache mechanics, hwc-realtime-streaming for push/stream orchestration, hwc-media-content for media-specific behavior, and hwc-stimulus-fundamentals for base Stimulus API questions.
+  Implement cross-cutting Hotwire UX feedback patterns: loading states, busy indicators, progress bars, optimistic UI, render interception, and view/page transitions. Prefer this skill when the core goal is perceived performance and user feedback, independent of a single feature domain. Use hwc-forms-validation for form correctness and validation behavior, hwc-navigation-content for navigation/history/cache mechanics, hwc-realtime-streaming for push/stream orchestration, and hwc-stimulus-fundamentals for base Stimulus API questions.
 ---
 
 # User Experience & Feedback
@@ -43,5 +43,4 @@ Use `references/INDEX.md` for the full catalog.
 - Form validation and submit correctness concerns: use `hwc-forms-validation`
 - Navigation/history/cache flow concerns: use `hwc-navigation-content`
 - Real-time push updates and stream actions: use `hwc-realtime-streaming`
-- Media-specific playback/upload concerns: use `hwc-media-content`
 - General Stimulus API/controller fundamentals: use `hwc-stimulus-fundamentals`

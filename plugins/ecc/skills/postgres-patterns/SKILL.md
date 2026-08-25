@@ -6,7 +6,7 @@ origin: ECC
 
 # PostgreSQL Patterns
 
-Quick reference for PostgreSQL best practices. For detailed guidance, use the `database-reviewer` agent.
+Quick reference for PostgreSQL best practices.
 
 ## When to Activate
 
@@ -135,12 +135,6 @@ REVOKE ALL ON SCHEMA public FROM public;
 
 SELECT pg_reload_conf();
 ```
-
-## Related
-
-- Agent: `database-reviewer` - Full database review workflow
-- Skill: `clickhouse-io` - ClickHouse analytics patterns
-- Skill: `backend-patterns` - API and backend patterns
 
 ---
 

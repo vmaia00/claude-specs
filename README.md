@@ -14,7 +14,8 @@ name. Update centrally here, then `git pull` lands in every consuming repo with 
 - **Command** (`init-repo`) — seeds a minimal starter `CLAUDE.md` (+ `AGENTS.md` pointer) for a new repo's local layer.
 - **Hook** (`secret-scan`) — blocks Write/Edit/MultiEdit that contain real-looking credentials.
 - **Hook** (`session-start`) — injects a concise standing directive (orchestrate · prefer existing skills/agents · define-done-then-verify · gate changes · untrusted-content baseline) at every session start.
-- **Skills** (`diagnose`, `write-a-skill`, `handoff`, `zoom-out`, `caveman`) — curated engineering/productivity skills vendored from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT; see `plugins/core/docs/THIRD-PARTY-NOTICES.md`).
+- **Skills** (`diagnose`, `write-a-skill`) — curated engineering/productivity skills vendored from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT; see `plugins/core/docs/THIRD-PARTY-NOTICES.md`). (`handoff`, `zoom-out`, `caveman` were removed in the 2026-08-25 usage audit.)
+- **Skills** (`shipping-artifacts`, `intended-vs-implemented`) + **commands** (`document-app`, `derive-tests`) — the AI-built-app reviewability cluster, relocated from the retired `pm` plugin (phuryn/pm-skills, MIT).
 - **Skill** (`react-bits`) — front-end motion/flair reference: when and how to reach for [react-bits](https://reactbits.dev) animated React components, with anti-sameness guidance (tokens/typography first, motion as the finisher). References the library; nothing is vendored.
 - **PRINCIPLES.md** — orchestrator model, Karpathy's 4 coding principles, universal operating rules.
 - **ETHOS.md** — builder disposition: search-first + first principles, complete-within-scope, user sovereignty (adapted from gstack).
@@ -68,6 +69,18 @@ Heavier, dependency-bearing tools that are better consumed as their own installs
   knowledge graph (Tree-sitter + NetworkX; Python deps). Sends only semantic content, not raw source.
 
 See `research/insights.md` for a backlog of further patterns under evaluation.
+
+## Marketplace contents (post-audit, 2026-08-25)
+
+A transcript-driven usage audit (two analyst rounds + an adversarial round + a reconciler)
+cut the catalogue from ~589 items (~10.3 MB) to ~58 items (~1.2 MB): `pm` and `spec-human`
+were retired (a 4-file reviewability cluster moved into `core`), `ecc` slimmed from 262
+skills to 6, `ruby` from 28 to 17 (reference dumps dropped in favour of versioned-URL
+indexes). The pre-cleanup tree is tagged `archive/pre-cleanup-2026-08-25`; vendored packs
+can be re-vendored from their upstreams (see each plugin's ATTRIBUTION.md). The `writing`
+plugin (added the same day) carries `latex-doc` — overflow-safe thesis-style PDF rendering
+(pandoc + XeLaTeX) — and `pt-pt` — European Portuguese enforcement, vendored from
+[mfrade/claude-skills](https://github.com/mfrade/claude-skills).
 
 ## Releasing & version pinning
 

@@ -1,12 +1,19 @@
 {
   "name": "ruby",
-  "description": "Curated Ruby / Rails / Hotwire / TDD agent skills (28) + a code-reviewer agent, vendored (MIT) from superpowers-ruby, rails-agent-skills and ruby-core-skills. Opt-in; install for Ruby on Rails work. See ATTRIBUTION.md.",
-  "version": "0.1.0",
+  "description": "Curated Ruby / Rails / Hotwire / TDD agent skills (17), vendored (MIT) from superpowers-ruby, rails-agent-skills and ruby-core-skills. Opt-in; install for Ruby on Rails work. See ATTRIBUTION.md.",
+  "version": "0.2.0",
   "author": {
     "name": "Vendored: Jesse Vincent, Lucian Ghinda, Ismael G Marin C — curated by Vasco Maia"
   },
   "homepage": "https://github.com/vmaia00/claude-specs",
   "repository": "https://github.com/vmaia00/claude-specs",
   "license": "MIT",
-  "keywords": ["ruby", "rails", "hotwire", "tdd", "skills", "vendored"]
+  "keywords": [
+    "ruby",
+    "rails",
+    "hotwire",
+    "tdd",
+    "skills",
+    "vendored"
+  ]
 }

@@ -93,3 +93,17 @@ rails-agent-skills' 9 `personas/` and superpowers-ruby's workflow skills
 This is a **frozen snapshot**, not a live mirror. To refresh, re-clone the upstreams at a newer
 commit, re-copy the selected skills, and bump `version` in `.claude-plugin/plugin.json`. Upstream
 improvements do **not** flow in automatically.
+
+## Slimming note — 2026-08-25
+
+The plugin was slimmed from 28 skills + 1 agent to **17 skills, no agents**. Removed:
+
+- **Skills (11):** `37signals-style`, `sandi-metz-rules`, `verification-before-completion`,
+  `plan-tests`, `ruby-commit-message`, `ruby-yard-docs`, `ruby-upgrade`, `rails-upgrade`,
+  `rails-seed-database`, `rails-version-api`, `hwc-media-content`.
+- **Agent (1):** `agents/code-reviewer.md`.
+- **`rails-guides/references/`** (~48 vendored offline guide copies) — the skill now maps topics
+  to the official versioned guides at `guides.rubyonrails.org` for live fetching instead.
+
+The vendoring history above is kept as written for provenance; upstream provenance for the
+remaining 17 skills is unchanged.

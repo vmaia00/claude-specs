@@ -2,7 +2,7 @@
 origin: superpowers-ruby
 name: hwc-stimulus-fundamentals
 description: >-
-  Cover Stimulus controller fundamentals: lifecycle hooks, values and valueChanged callbacks, targets and target callbacks, outlets, action parameters, keyboard events, and controller architecture patterns. Prefer this skill when the request is primarily about Stimulus APIs and controller design independent of a specific Hotwire domain. Use hwc-forms-validation for form-specific workflows, hwc-navigation-content for Turbo navigation concerns, hwc-realtime-streaming for Turbo Streams/WebSocket patterns, hwc-media-content for media integrations, and hwc-ux-feedback for loading/progress/transition UX patterns.
+  Cover Stimulus controller fundamentals: lifecycle hooks, values and valueChanged callbacks, targets and target callbacks, outlets, action parameters, keyboard events, and controller architecture patterns. Prefer this skill when the request is primarily about Stimulus APIs and controller design independent of a specific Hotwire domain. Use hwc-forms-validation for form-specific workflows, hwc-navigation-content for Turbo navigation concerns, hwc-realtime-streaming for Turbo Streams/WebSocket patterns, and hwc-ux-feedback for loading/progress/transition UX patterns.
 ---
 
 # Stimulus Fundamentals
@@ -44,5 +44,4 @@ Use `references/INDEX.md` for the full catalog.
 - Form-centric behavior: use `hwc-forms-validation`
 - Navigation/history/cache with Turbo: use `hwc-navigation-content`
 - Turbo Stream/WebSocket orchestration: use `hwc-realtime-streaming`
-- Media integrations and playback concerns: use `hwc-media-content`
 - UX feedback/transitions/progress concerns: use `hwc-ux-feedback`

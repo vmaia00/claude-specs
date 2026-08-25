@@ -22,32 +22,18 @@
       "tags": ["spec", "documentation", "agentic", "traceability", "contracts"]
     },
     {
-      "name": "spec-human",
-      "source": "./plugins/spec-human",
-      "description": "Specification doctrine and toolkit for work executed by a human engineering team: what and why not how, length budgets, a machine-tell checklist, the constraint-vs-method cut, ADRs, a sample-chapter-first delivery gate, and a tech-lead-reader audit agent. Pairs with spec-agentic.",
-      "category": "workflow",
-      "tags": ["spec", "documentation", "product-requirements", "adr", "readability"]
-    },
-    {
       "name": "ecc",
       "source": "./plugins/ecc",
-      "description": "Vendored full copy of affaan-m/ECC v2.0.0 — 64 agents, 262 skills, 84 commands (MIT). Opt-in; mostly language/framework-specific.",
+      "description": "Slim remnant of affaan-m/ECC (MIT): 6 curated skills — seo, design-system, api-design, accessibility, make-interfaces-feel-better, postgres-patterns. The other ~580 vendored items were removed 2026-08-25 after a usage audit (re-vendor from upstream if ever needed).",
       "category": "vendored",
-      "tags": ["ecc", "agents", "skills", "commands", "vendored"]
+      "tags": ["ecc", "skills", "vendored"]
     },
     {
       "name": "ruby",
       "source": "./plugins/ruby",
-      "description": "Curated Ruby/Rails/Hotwire/TDD agent skills (28) + a code-reviewer agent, vendored (MIT) from superpowers-ruby + rails-agent-skills + ruby-core-skills. Opt-in; install for Ruby on Rails work.",
+      "description": "Curated Ruby/Rails/Hotwire/TDD skills (17), vendored (MIT) from superpowers-ruby + rails-agent-skills + ruby-core-skills, slimmed 2026-08-25. Opt-in; install for Ruby on Rails work.",
       "category": "language",
       "tags": ["ruby", "rails", "hotwire", "tdd", "skills", "vendored"]
-    },
-    {
-      "name": "pm",
-      "source": "./plugins/pm",
-      "description": "Vendored copy of phuryn/pm-skills v2.0.0 — 68 product-management skills + 42 commands across discovery, strategy, execution, market research, analytics, GTM, marketing/growth, a toolkit and AI-shipping (MIT). Opt-in; install for product discovery, PRD/spec and roadmap work.",
-      "category": "vendored",
-      "tags": ["product-management", "pm", "prd", "discovery", "strategy", "vendored"]
     },
     {
       "name": "review-council",
@@ -57,9 +43,16 @@
       "tags": ["review", "code-review", "multi-agent", "personas", "orchestrator"]
     },
     {
+      "name": "writing",
+      "source": "./plugins/writing",
+      "description": "Document production: latex-doc renders Markdown deliverables into overflow-safe thesis-style PDFs (pandoc + XeLaTeX, three-families overflow method), and pt-pt enforces European Portuguese in every Portuguese response (vendored from mfrade/claude-skills).",
+      "category": "workflow",
+      "tags": ["latex", "pdf", "pandoc", "pt-pt", "portuguese", "writing"]
+    },
+    {
       "name": "consulting",
       "source": "./plugins/consulting",
-      "description": "Two-phase consulting-grade research reports: Phase 1 designs the analysis framework (chapter skeleton, named frameworks, per-chapter data requirements, visualization plan), other skills collect the data, Phase 2 writes the McKinsey/BCG-voice report with charts and a zero-hallucination policy. Opt-in.",
+      "description": "Consulting-grade analysis-framework design: chapter skeleton, named frameworks, per-chapter data requirements, and a visualisation plan from just a research subject; data gathered via ordinary research, report written against the framework with a zero-hallucination policy. Opt-in.",
       "category": "workflow",
       "tags": ["consulting", "research", "market-analysis", "report", "frameworks"]
     }

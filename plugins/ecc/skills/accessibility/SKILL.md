@@ -1,7 +1,7 @@
 ---
 name: accessibility
 description: Design, implement, and audit inclusive digital products using WCAG 2.2 Level AA
-  standards. Use this skill to generate semantic ARIA for Web and accessibility traits for Web and Native platforms (iOS/Android).
+  standards. Use this skill to generate semantic ARIA and audit Web interfaces for compliance.
 origin: ECC
 ---
 
@@ -11,7 +11,7 @@ This skill ensures that digital interfaces are Perceivable, Operable, Understand
 
 ## When to Use
 
-- Defining UI component specifications for Web, iOS, or Android.
+- Defining UI component specifications for the Web.
 - Auditing existing code for accessibility barriers or compliance gaps.
 - Implementing new WCAG 2.2 standards like Target Size (Minimum) and Focus Appearance.
 - Mapping high-level design requirements to technical attributes (ARIA roles, traits, hints).
@@ -22,7 +22,7 @@ This skill ensures that digital interfaces are Perceivable, Operable, Understand
 - **Semantic Mapping**: Using native elements over generic containers to provide built-in accessibility.
 - **Accessibility Tree**: The representation of the UI that assistive technologies actually "read."
 - **Focus Management**: Controlling the order and visibility of the keyboard/screen reader cursor.
-- **Labeling & Hints**: Providing context through `aria-label`, `accessibilityLabel`, and `contentDescription`.
+- **Labeling & Hints**: Providing context through `aria-label` and `aria-describedby`.
 
 ## How It Works
 
@@ -57,24 +57,9 @@ Determine the functional purpose (e.g., Is this a button, a link, or a tab?). Us
 
 ```mermaid
 flowchart TD
-  UI["UI Component"] --> Platform{Platform?}
-  Platform -->|Web| ARIA["WAI-ARIA + HTML5"]
-  Platform -->|iOS| SwiftUI["Accessibility Traits + Labels"]
-  Platform -->|Android| Compose["Semantics + ContentDesc"]
-
+  UI["UI Component"] --> ARIA["WAI-ARIA + HTML5"]
   ARIA --> AT["Assistive Technology (Screen Readers, Switches)"]
-  SwiftUI --> AT
-  Compose --> AT
 ```
-
-## Cross-Platform Mapping
-
-| Feature            | Web (HTML/ARIA)          | iOS (SwiftUI)                        | Android (Compose)                                           |
-| :----------------- | :----------------------- | :----------------------------------- | :---------------------------------------------------------- |
-| **Primary Label**  | `aria-label` / `<label>` | `.accessibilityLabel()`              | `contentDescription`                                        |
-| **Secondary Hint** | `aria-describedby`       | `.accessibilityHint()`               | `Modifier.semantics { stateDescription = ... }`             |
-| **Action Role**    | `role="button"`          | `.accessibilityAddTraits(.isButton)` | `Modifier.semantics { role = Role.Button }`                 |
-| **Live Updates**   | `aria-live="polite"`     | `.accessibilityLiveRegion(.polite)`  | `Modifier.semantics { liveRegion = LiveRegionMode.Polite }` |
 
 ## Examples
 
@@ -90,29 +75,6 @@ flowchart TD
 </form>
 ```
 
-### iOS: Accessible Action Button
-
-```swift
-Button(action: deleteItem) {
-    Image(systemName: "trash")
-}
-.accessibilityLabel("Delete item")
-.accessibilityHint("Permanently removes this item from your list")
-.accessibilityAddTraits(.isButton)
-```
-
-### Android: Accessible Toggle
-
-```kotlin
-Switch(
-    checked = isEnabled,
-    onCheckedChange = { onToggle() },
-    modifier = Modifier.semantics {
-        contentDescription = "Enable notifications"
-    }
-)
-```
-
 ## Anti-Patterns to Avoid
 
 - **Div-Buttons**: Using a `<div>` or `<span>` for a click event without adding a role and keyboard support.
@@ -122,7 +84,7 @@ Switch(
 
 ## Best Practices Checklist
 
-- [ ] Interactive elements meet the **24x24px** (Web) or **44x44pt** (Native) target size.
+- [ ] Interactive elements meet the **24x24 CSS pixel** minimum target size.
 - [ ] Focus indicators are clearly visible and high-contrast.
 - [ ] Modals **contain focus** while open, and release it cleanly on close (`Escape` key or close button).
 - [ ] Dropdowns and menus restore focus to the trigger element on close.
@@ -134,13 +96,7 @@ Switch(
 
 - [WCAG 2.2 Guidelines](https://www.w3.org/TR/WCAG22/)
 - [WAI-ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices/)
-- [iOS Accessibility Programming Guide](https://developer.apple.com/documentation/accessibility)
-- [iOS Human Interface Guidelines - Accessibility](https://developer.apple.com/design/human-interface-guidelines/accessibility)
-- [Android Accessibility Developer Guide](https://developer.android.com/guide/topics/ui/accessibility)
 
 ## Related Skills
 
-- `frontend-patterns`
-- `design-system`
-- `liquid-glass-design`
-- `swiftui-patterns`
+- `ecc:design-system`

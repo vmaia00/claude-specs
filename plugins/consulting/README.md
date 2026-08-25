@@ -1,42 +1,42 @@
 # consulting
 
-A **two-phase, consulting-grade research-report skill** for Claude Code. It separates *thinking
-structure* from *data collection*: Phase 1 designs the analytical framework, other skills gather
-the data, and Phase 2 writes the final McKinsey/BCG-voice report. Opt-in.
+A **consulting-grade analysis-framework skill** for Claude Code. Its core deliverable is the
+*thinking structure* for a research report: given a research subject, it designs the analytical
+framework before any data is touched. Opt-in.
 
 ## The flow
 
 ```
-  research subject ─► Phase 1: Framework ─► (handoff) ─► Phase 2: Report
-                      • chapter skeleton      data         • charts + tables
-                      • named frameworks      collection   • What→Why→So-What
-                      • per-chapter data      by other     • zero-hallucination
-                        requirements          skills         narrative
-                      • visualization plan   (deep-research,
-                                              data-analysis…)
+  research subject ─► Analysis Framework ─► ordinary research ─► Report
+                      • chapter skeleton     (WebSearch/         written against
+                      • named frameworks      WebFetch, user      the framework
+                      • per-chapter data      documents)
+                        requirements
+                      • visualisation plan
 ```
 
-1. **Phase 1 — Analysis Framework** — from just a research subject + scope, pick 2–4 named
-   frameworks (SWOT, Porter's Five Forces, TAM-SAM-SOM, RFM, DCF, JTBD, …), lay out a chapter
-   skeleton, and specify exactly what data each chapter needs (with search keywords + P0/P1/P2
-   priority) and how it will be visualized.
-2. **Handoff** — the framework's search keywords drive other data-collection skills; this skill
-   does **not** collect data itself.
-3. **Phase 2 — Report** — synthesize the framework + collected Data Package into a polished
-   report: embedded charts, comparison tables, and `Data → User Psychology → Strategy Implication`
-   narrative. Strict **zero-hallucination** policy — every number traces back to the Data Summary.
+1. **Framework design** — from just a research subject + scope, pick 2–4 named frameworks
+   (SWOT, Porter's Five Forces, TAM-SAM-SOM, RFM, DCF, JTBD, …), lay out a chapter skeleton, and
+   specify exactly what data each chapter needs (with search keywords + P0/P1/P2 priority) and how
+   it will be visualised.
+2. **Research** — data collection happens via ordinary research: WebSearch/WebFetch driven by the
+   framework's search keywords, plus any user-supplied documents.
+3. **Report** — written against the framework: comparison tables, `Data → User Psychology →
+   Strategy Implication` narrative, and a strict **zero-hallucination** policy — every number
+   traces to a collected source. Chart and report rendering is delegated to the built-in
+   **artifact-design** and **dataviz** skills.
 
 ## Usage
 
 The skill auto-loads when you ask for a market analysis, consumer-insight report, financial
 analysis, industry research, competitive intelligence, or any consulting-grade analytical report —
-either to design the framework (Phase 1) or to write the report from collected data (Phase 2).
+whether you need the framework designed or a report written from collected findings.
 
 ## What's inside
 
-- **1 skill** — `consulting-analysis` (`SKILL.md`): the two-phase contract, the framework toolkit,
-  the per-chapter data-requirement and visualization templates, the report structure template, and
-  the quality checklists.
+- **1 skill** — `consulting-analysis` (`SKILL.md`): the framework-design workflow, the named-framework
+  toolkit, the per-chapter data-requirement and visualisation templates, condensed report-writing
+  guidance, and the quality checklist.
 
 ## Settings
 
