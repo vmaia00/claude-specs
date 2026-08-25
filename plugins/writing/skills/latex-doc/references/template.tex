@@ -1,0 +1,142 @@
+% template.tex — pandoc (XeLaTeX) template for thesis-style PDF deliverables.
+% Generalised from Bool's «bool-tese.tex» pipeline (full-colour cover, TOC,
+% chapter-per-page), which in turn took its shape from the ipleiria-thesis
+% template. Consumed by scripts/build_latex.py; variables come from the
+% metadata table at the top of the source .md and from CLI flags.
+%
+% Brand parameters (all optional, with neutral-ish defaults):
+%   accent-color  cover/rule/link colour, hex without '#'   (default E7453A)
+%   ink-color     body text colour                          (default 141414)
+%   muted-color   header/footer colour                      (default 4D4D4D)
+%   mainfont      system font family name                   (default Yu Gothic UI)
+%   logo          path to the cover logo image (required)
+\documentclass[a4paper,11pt,oneside]{scrreprt}
+
+\usepackage{fontspec}
+$if(mainfont)$
+\setmainfont{$mainfont$}
+\newfontfamily\headfont{$mainfont$}
+$else$
+\setmainfont{Yu Gothic UI}[UprightFont={* Light},BoldFont={* Semibold},ItalicFont={*},BoldItalicFont={* Semibold}]
+\newfontfamily\headfont{Yu Gothic UI}[UprightFont={* Semibold}]
+$endif$
+
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{$if(accent-color)$$accent-color$$else$E7453A$endif$}
+\definecolor{ink}{HTML}{$if(ink-color)$$ink-color$$else$141414$endif$}
+\definecolor{muted}{HTML}{$if(muted-color)$$muted-color$$else$4D4D4D$endif$}
+\color{ink}
+
+\usepackage{geometry}
+\geometry{a4paper,top=26mm,bottom=24mm,left=24mm,right=22mm}
+
+% ------------------------------------------------------------ overflow brakes
+% The tolerance block: give TeX room to breathe instead of overflowing the
+% margin. See references/overflow-method.md for the why of every line.
+\usepackage{setspace}
+\setstretch{1.32}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55\baselineskip}
+\emergencystretch=3em
+\tolerance=2000
+\hbadness=10000
+\setlength{\hfuzz}{2pt}
+\usepackage{microtype}
+$if(lang-english)$
+\usepackage[english]{babel}
+$else$
+\usepackage[portuguese]{babel}
+\renewcommand{\contentsname}{Índice}
+$endif$
+
+% Chapters (markdown «##») carry their own numbering in the text, so LaTeX
+% numbering is off — but they still appear in the TOC.
+\setcounter{secnumdepth}{-1}
+\setcounter{tocdepth}{1}
+\addtokomafont{disposition}{\color{ink}}
+\setkomafont{chapter}{\headfont\Huge}
+\setkomafont{section}{\headfont\LARGE}
+\setkomafont{subsection}{\headfont\large}
+\renewcommand*{\chapterheadstartvskip}{\vspace*{6mm}}
+\renewcommand*{\chapterheadendvskip}{\vspace{2mm}{\color{accent}\rule{28mm}{1.6pt}}\vspace{6mm}}
+
+% Running head and page number, thesis-style.
+\usepackage[automark]{scrlayer-scrpage}
+\clearpairofpagestyles
+\ihead{\small\color{muted}\headmark}
+\ofoot*{\small\color{muted}\pagemark}
+\setkomafont{pageheadfoot}{\normalfont\small}
+
+\usepackage{graphicx}
+\usepackage{longtable,booktabs,array,calc}
+\usepackage{etoolbox}
+\AtBeginEnvironment{longtable}{\small\setstretch{1.15}}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+\usepackage{footnotehyper}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{colorlinks=true,linkcolor=ink,urlcolor=accent,citecolor=accent}
+\urlstyle{same}
+
+% pandoc: tight lists and code blocks (the code-family overflow brake)
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\footnotesize,breaklines=true}
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+% inline code one step smaller
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{{\small\oldtexttt{#1}}}
+
+% figures never wider than the text block (the image-family brake)
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,keepaspectratio}
+
+\begin{document}
+
+% ---------------------------------------------------------------- cover
+\newgeometry{margin=0pt}
+\begin{titlepage}
+\pagecolor{accent}
+\color{white}
+\vspace*{-\topskip}
+\noindent
+\begin{minipage}[t][\dimexpr\paperheight-26mm\relax][t]{\paperwidth}
+  \vspace*{20mm}
+  \hspace*{20mm}\includegraphics[width=30mm]{$logo$}\par
+  \vspace{24mm}
+  \hspace*{20mm}\begin{minipage}{0.76\paperwidth}
+    {\headfont\fontsize{12.5}{16}\selectfont $eyebrow$\par}
+    \vspace{7mm}
+    {\headfont\fontsize{29}{35}\selectfont $title$\par}
+    $if(subtitle)$\vspace{8mm}
+    {\fontsize{12}{19}\selectfont $subtitle$\par}$endif$
+  \end{minipage}\par
+  \vfill
+  \hspace*{20mm}\begin{minipage}{0.76\paperwidth}
+    {\color{white}\rule{28mm}{1.6pt}}\par\vspace{5mm}
+    \fontsize{10.5}{17}\selectfont
+    \begin{tabular}{@{}p{34mm}l@{}}
+$metatable$
+    \end{tabular}
+  \end{minipage}
+\end{minipage}
+\end{titlepage}
+\restoregeometry
+\pagecolor{white}
+\color{ink}
+
+% ---------------------------------------------------------------- TOC
+\pagenumbering{roman}
+{\setstretch{1.05}\setkomafont{chapter}{\headfont\huge}
+\tableofcontents}
+\clearpage
+\pagenumbering{arabic}
+
+% ---------------------------------------------------------------- body
+$body$
+
+\end{document}

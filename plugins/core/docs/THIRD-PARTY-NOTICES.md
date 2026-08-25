@@ -43,6 +43,45 @@ SOFTWARE.
 *To refresh: re-clone the upstream repo at a newer commit, re-copy the skill folders, and update
 the commit SHA above.*
 
+## phuryn/pm-skills
+- **Source:** https://github.com/phuryn/pm-skills
+- **Commit:** `a0cd730`
+- **Vendored:** originally into the (now-removed) `pm` plugin; relocated here 2026-08-25 when that
+  plugin was retired.
+- **License:** MIT — Copyright (c) 2026 Paweł Huryn
+- **Files used** (with light edits, under `plugins/core/`): `skills/shipping-artifacts/`,
+  `skills/intended-vs-implemented/`, `commands/document-app.md`, `commands/derive-tests.md`.
+
+Unlike the verbatim skills above, these four files carry **light edits**: dead references to the
+removed `pm` commands repointed at the built-in `/security-review` / `/code-review`, output paths
+retargeted to the host project's docs convention, and the test-ID convention aligned with this
+org's `TF-NN` scheme.
+
+### MIT License (phuryn/pm-skills)
+```
+MIT License
+
+Copyright (c) 2026 Paweł Huryn
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
 ## Referenced libraries (not vendored)
 
 The skills below are **original reference material** authored for this repo. No third-party source is

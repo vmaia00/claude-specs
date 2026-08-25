@@ -145,10 +145,3 @@ Fix: Generate a unique title per product using the product name and primary cate
 | schema for content that is not actually present | match schema to reality |
 | content advice without checking the actual page | read the real page first |
 | generic “improve SEO” outputs | tie every recommendation to a page or asset |
-
-## Related Skills
-
-- `seo-specialist`
-- `frontend-patterns`
-- `brand-voice`
-- `market-research`

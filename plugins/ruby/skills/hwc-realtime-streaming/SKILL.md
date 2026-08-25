@@ -2,7 +2,7 @@
 origin: superpowers-ruby
 name: hwc-realtime-streaming
 description: >-
-  Implement real-time Hotwire behavior: Turbo Streams over WebSocket/SSE, custom stream actions, inline stream tags, live list updates, and cross-tab state synchronization. Prefer this skill when the core problem is push-based updates or stream action orchestration. Use hwc-navigation-content for pull-based pagination/tab/lazy-navigation flows, hwc-forms-validation for form lifecycle and validation, hwc-media-content for media upload/playback behavior, hwc-ux-feedback for generic loading/progress/transitions, and hwc-stimulus-fundamentals for non-stream Stimulus fundamentals.
+  Implement real-time Hotwire behavior: Turbo Streams over WebSocket/SSE, custom stream actions, inline stream tags, live list updates, and cross-tab state synchronization. Prefer this skill when the core problem is push-based updates or stream action orchestration. Use hwc-navigation-content for pull-based pagination/tab/lazy-navigation flows, hwc-forms-validation for form lifecycle and validation, hwc-ux-feedback for generic loading/progress/transitions, and hwc-stimulus-fundamentals for non-stream Stimulus fundamentals.
 ---
 
 # Real-Time & Streaming
@@ -42,6 +42,5 @@ Use `references/INDEX.md` for the full catalog.
 
 - Pull-based navigation/history concerns: use `hwc-navigation-content`
 - Form validation and submit lifecycle concerns: use `hwc-forms-validation`
-- Media playback/upload interactions: use `hwc-media-content`
 - Generic loading/progress/transition UX: use `hwc-ux-feedback`
 - Base Stimulus API questions outside streaming: use `hwc-stimulus-fundamentals`

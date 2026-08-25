@@ -66,7 +66,7 @@ Use **only** these labels:
 - **`Suggestion`** — conventions, performance, or "Thin controller -> fat model" anti-patterns.
 - **`Nice to have`** — small style or micro-optimization.
 
-**Always Critical (flag every occurrence):**
+**Always Critical (flag every occurrence):** *(feed these flags into the review-council deep-review pipeline as reference input rather than running this skill as a competing review path)*
 - `params.require(...).permit!` — privilege escalation
 - `html_safe` or `raw` on user-supplied content — XSS
 - **Business logic inside a controller action** — pricing, tax, or domain calculation

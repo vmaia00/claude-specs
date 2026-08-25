@@ -21,6 +21,11 @@ metadata:
 ---
 # Create Service Object
 
+> **Before adopting the result contract:** reconcile the `{ success:, response: }` shape below
+> with the host codebase's existing service conventions (e.g. ubbu-platform-be) before writing any
+> new service. Where the host already has an established convention that conflicts, prefer the
+> host's convention.
+
 ## HARD-GATE
 
 ```text
@@ -119,7 +124,6 @@ Load these files only when their specific content is needed:
 
 | Skill | When to chain |
 |-------|---------------|
-| **write-yard-docs** | Writing/reviewing inline docs |
 | **integrate-api-client** | External API integrations |
 | **implement-calculator-pattern** | Variant-based calculators |
 | **write-tests** | General testing structure |
