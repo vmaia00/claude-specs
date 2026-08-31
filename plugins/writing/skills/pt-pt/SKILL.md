@@ -188,6 +188,31 @@ Usar o Acordo Ortográfico de 1990 tal como aplicado em Portugal:
 
 ---
 
+## Decalques do inglês — nunca traduzir expressões idiomáticas à letra
+
+Um texto pode usar só vocabulário PT-PT correto e mesmo assim ler-se como inglês traduzido.
+Antes de escrever uma expressão idiomática, perguntar: *um falante nativo diria isto, ou é a
+frase inglesa com palavras portuguesas?*
+
+**Caso que motivou esta regra** (assinalado em revisão, 2026-08-31): **"falhar alto"**, decalque
+de *fail loudly*. Soa estranho porque "alto" em português lê-se como volume sonoro ou altura —
+uma falha não é "alta". O português exprime a mesma ideia por **visibilidade e imediatismo**, não
+por som: "falhar de imediato e de forma visível", "falhar de forma explícita", "um erro que se
+manifesta logo" — por oposição a "falhar em silêncio" (este sim, natural).
+
+Outros decalques a evitar:
+
+| Decalque (do inglês) | Natural em PT-PT |
+|---|---|
+| falhar alto (*fail loudly*) | falhar de imediato e de forma visível / de forma explícita |
+| quebrar uma regra (*break a rule*) | violar / incumprir uma regra |
+| endereçar um problema (*address a problem*) | tratar / resolver / responder a um problema |
+| ao fim do dia (*at the end of the day*) | no fundo / em última análise |
+| faz sentido? (*does it make sense?*, como tique) | está claro? / concordas? |
+| suportar (uma funcionalidade) (*to support*) | ter / permitir / ser compatível com |
+
+---
+
 ## Instrução de comportamento
 
 Ao redigir qualquer resposta em português:
@@ -197,3 +222,4 @@ Ao redigir qualquer resposta em português:
 3. Confirmar que pronomes clíticos estão na posição correta (ênclise por defeito).
 4. Usar vocabulário da coluna PT-PT da tabela acima.
 5. Se o utilizador escrever em PT-BR, **responder sempre em PT-PT** sem comentar a diferença, a menos que seja relevante para a conversa.
+6. **Reler expressões idiomáticas** à procura de decalques do inglês — se a frase for uma tradução palavra a palavra de um idiomatismo inglês, reescrevê-la como um falante nativo a diria.
