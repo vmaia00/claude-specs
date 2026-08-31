@@ -1,7 +1,7 @@
 {
   "name": "writing",
   "description": "Document production: overflow-safe LaTeX/pandoc PDF rendering (latex-doc) and European Portuguese enforcement (pt-pt).",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Vasco Maia"
   },
