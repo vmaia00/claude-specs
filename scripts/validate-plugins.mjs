@@ -95,9 +95,17 @@ if (!existsSync(marketplacePath)) {
         }
         const isVendored = p?.category === "vendored" || (Array.isArray(p?.tags) && p.tags.includes("vendored"));
         if (isVendored && p?.name) vendored.add(p.name);
-        if (p?.source) {
+        if (typeof p?.source === "string") {
           const dir = join(ROOT, p.source);
           if (!existsSync(dir)) err(marketplacePath, `plugin "${p.name}" source does not exist: ${p.source}`);
+        } else if (p?.source && typeof p.source === "object") {
+          // Remote source (github / url / git-subdir / npm / archive): only the shape is checked here.
+          const kind = p.source.source;
+          const repoOk = typeof p.source.repo === "string" && p.source.repo.split("/").length === 2 && p.source.repo.split("/").every((x) => x.length > 0);
+          const ok = (kind === "github" && repoOk)
+            || ((kind === "url" || kind === "git-subdir" || kind === "archive") && typeof p.source.url === "string")
+            || (kind === "npm" && typeof p.source.package === "string");
+          if (!ok) err(marketplacePath, `plugin "${p.name}" has an unrecognised remote source: ${JSON.stringify(p.source)}`);
         }
       }
     }

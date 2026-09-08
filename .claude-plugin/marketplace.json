@@ -55,6 +55,13 @@
       "description": "Consulting-grade analysis-framework design: chapter skeleton, named frameworks, per-chapter data requirements, and a visualisation plan from just a research subject; data gathered via ordinary research, report written against the framework with a zero-hallucination policy. Opt-in.",
       "category": "workflow",
       "tags": ["consulting", "research", "market-analysis", "report", "frameworks"]
+    },
+    {
+      "name": "bool-delivery",
+      "source": { "source": "github", "repo": "vmaia00/bool-project-template" },
+      "description": "Bool delivery toolkit for project hubs: PE workflow skills (PRD, stories, meetings, ADRs, decision frames), provenance fact-checking, the deliverable gate chain (/deliver), retrospectives, opt-in architecture tournaments, daily upkeep, and residue/attribution guards. Rules and settings are copied into each hub by /new-project; see the repository README and .claude/README.md.",
+      "category": "workflow",
+      "tags": ["bool", "delivery", "product-engineering", "provenance", "deliverables", "upkeep"]
     }
   ]
 }
