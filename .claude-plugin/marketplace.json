@@ -55,6 +55,13 @@
       "description": "Consulting-grade analysis-framework design: chapter skeleton, named frameworks, per-chapter data requirements, and a visualisation plan from just a research subject; data gathered via ordinary research, report written against the framework with a zero-hallucination policy. Opt-in.",
       "category": "workflow",
       "tags": ["consulting", "research", "market-analysis", "report", "frameworks"]
+    },
+    {
+      "name": "cloudflare-vm",
+      "source": "./plugins/cloudflare-vm",
+      "description": "Cloudflare platform references: /cloudflare-vm:cloudflare-vm index with product decision trees, plus one skill per product (/cloudflare-vm:r2, :d1, :workers, :kv, :wrangler ... 63 in all). Vendored from themusebook/skills (derived from cloudflare/skills, Apache-2.0). Opt-in.",
+      "category": "vendored",
+      "tags": ["cloudflare", "workers", "r2", "d1", "skills", "vendored"]
     }
   ]
 }
