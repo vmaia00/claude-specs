@@ -82,6 +82,12 @@ plugin (added the same day) carries `latex-doc` — overflow-safe thesis-style P
 (pandoc + XeLaTeX) — and `pt-pt` — European Portuguese enforcement, vendored from
 [mfrade/claude-skills](https://github.com/mfrade/claude-skills).
 
+The opt-in `cloudflare-vm` plugin (added 2026-11-23) has one skill per Cloudflare product
+(`/cloudflare-vm:r2`, `/cloudflare-vm:d1`, ... 63 in all) and a `/cloudflare-vm:cloudflare-vm`
+index with product decision trees. It is vendored from
+[themusebook/skills](https://github.com/themusebook/skills), which derives from
+[cloudflare/skills](https://github.com/cloudflare/skills) (Apache-2.0). See its ATTRIBUTION.md.
+
 ## Releasing & version pinning
 
 Auto-update (track latest) and pinning (lock a version) are opposites — set up both so you can

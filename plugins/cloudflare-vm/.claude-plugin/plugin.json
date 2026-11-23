@@ -1,0 +1,8 @@
+{
+  "name": "cloudflare-vm",
+  "description": "Cloudflare platform references: a /cloudflare-vm:cloudflare-vm index with product decision trees, plus one skill per product (/cloudflare-vm:r2, /cloudflare-vm:d1, /cloudflare-vm:workers, ... 63 in all) with overview, API, configuration, patterns and gotchas. Vendored from themusebook/skills (derived from cloudflare/skills, Apache-2.0).",
+  "version": "0.1.0",
+  "author": { "name": "Vasco Maia" },
+  "license": "Apache-2.0",
+  "keywords": ["cloudflare", "workers", "r2", "d1", "kv", "wrangler", "vendored"]
+}
