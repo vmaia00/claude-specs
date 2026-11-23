@@ -17,3 +17,12 @@ plugins/ruby/skills/rails-guides/references/command_line.md:generic-api-key:1408
 plugins/ruby/skills/rails-guides/references/active_record_encryption.md:generic-api-key:55
 plugins/ruby/skills/rails-guides/references/active_record_encryption.md:generic-api-key:56
 plugins/ruby/skills/rails-guides/references/active_record_encryption.md:generic-api-key:817
+
+# Vendored `cloudflare-vm` plugin (themusebook/skills): curl examples with an
+# `Authorization: Bearer $CF_API_TOKEN`-style placeholder header, and a fake
+# `sk_live_abc123` used to illustrate a "don't hardcode credentials" anti-pattern.
+plugins/cloudflare-vm/skills/argo-smart-routing/SKILL.md:curl-auth-header:23
+plugins/cloudflare-vm/skills/argo-smart-routing/api.md:curl-auth-header:27
+plugins/cloudflare-vm/skills/argo-smart-routing/api.md:curl-auth-header:84
+plugins/cloudflare-vm/skills/bindings/patterns.md:generic-api-key:82
+plugins/cloudflare-vm/skills/bindings/patterns.md:generic-api-key:182
